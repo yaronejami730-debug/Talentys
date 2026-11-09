@@ -982,10 +982,22 @@ age.addEventListener("input",()=>{const a=parseInt(age.value,10);pr.hidden=!(a>=
 
 /* ---------- Envoi ---------- */
 function readFile(f){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(",")[1]);r.onerror=rej;r.readAsDataURL(f);});}
+const SB_URL="https://kfjetzgjogktlgcvetbp.supabase.co";
+const SB_KEY="sb_publishable_WLPSnMC1_By6yQdpaluGeA_x-p6ddVi";
 async function send(payload){
-  const url=window.TALENTYS_ENDPOINT;
-  if(!url) return "preview";
-  await fetch(url,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)});
+  const H={apikey:SB_KEY,Authorization:"Bearer "+SB_KEY};
+  let cv_path=null;
+  if(payload.cv){
+    const bin=atob(payload.cv), bytes=new Uint8Array(bin.length);
+    for(let i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
+    const safe=(payload.cvName||"cv").replace(/[^a-zA-Z0-9._-]/g,"_");
+    cv_path=Date.now()+"-"+Math.random().toString(36).slice(2,8)+"-"+safe;
+    const up=await fetch(SB_URL+"/storage/v1/object/cv/"+cv_path,{method:"POST",headers:{...H,"Content-Type":payload.cvType||"application/octet-stream"},body:bytes});
+    if(!up.ok) throw new Error("upload "+up.status);
+  }
+  const row={prenom:payload.prenom,nom:payload.nom,tel:payload.tel,email:payload.email,age:payload.age,niveau:payload.niveau||null,parent_ok:!!payload.parent,cv_path};
+  const r=await fetch(SB_URL+"/rest/v1/candidats",{method:"POST",headers:{...H,"Content-Type":"application/json",Prefer:"return=minimal"},body:JSON.stringify(row)});
+  if(!r.ok) throw new Error("insert "+r.status);
   return "sent";
 }
 function fail(el,msg){el.textContent=msg;el.hidden=false;}
