@@ -1,0 +1,1149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Talentys École des Commerciaux</title>
+<meta name="description" content="Deviens commercial en alternance : titre Bac+2, formation 100 % financée et rémunérée, 14 mois, accessible sans le Bac. Job dating tous les vendredis à Bagnolet pour les 16-25 ans.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Talentys École des Commerciaux">
+<meta property="og:description" content="Plus tu vends, plus tu gagnes. Alternance Bac+2 100 % financée et rémunérée. Job dating tous les vendredis à Bagnolet.">
+<meta property="og:image" content="https://talentys.info/og-image.png">
+<meta property="og:url" content="https://talentys.info/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 115'%3E%3Cpolygon points='50,4 96,30.5 96,84.5 50,111 4,84.5 4,30.5' fill='%230B1A33'/%3E%3Cpath d='M36 57.5 L50 4 L60 30 Z M64 57.5 L50 111 L40 85 Z' fill='%23FF6414'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap">
+<style>
+/* Feuille claire façon "fiche pilote" : un fond presque blanc, encre marine du logo, un seul orange vif.
+   Panneaux sombres qui entrent et sortent par section, trois premiers blocs empilés (pile collante). */
+:root{
+  --ground:#F5F7F9;
+  --ink:#0B1A33;
+  --ink-soft:#4B5874;
+  --line:#CBD3DF;
+  --accent:#FF6414;
+  --accent-ink:#C24400;
+  --panel:#0A1328;
+  --panel-2:#111D3A;
+  --on-panel:#EEF2F8;
+  --on-panel-soft:#93A1BE;
+  --gold:#C9A45C;
+  --f-display:"Barlow Condensed","Arial Narrow","Roboto Condensed",sans-serif;
+  --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mark:"Montserrat",system-ui,sans-serif;
+  --t-label:.8125rem; --t-body:1rem; --t-lead:1.125rem; --t-title:1.375rem;
+  --t-heading:2.4rem; --t-display:clamp(2.8rem,6.2vw,5.2rem); --t-impact:clamp(3.2rem,7.4vw,6.4rem);
+  --ease:cubic-bezier(.2,0,0,1);
+  color-scheme:light;
+}
+[hidden]{display:none!important}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--ground);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ground)}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;text-transform:uppercase;margin:0;line-height:.94;letter-spacing:-.005em;text-wrap:balance}
+p{margin:0}
+.gut{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media(min-width:640px){.gut{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}}
+.frame{max-width:1440px;margin:0 auto}
+.label{font-size:var(--t-label);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.muted{color:var(--ink-soft)}
+.acc{color:var(--accent-ink)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- Bouton chanfreiné ---------- */
+.cta{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:1.1em;height:3.25rem;padding:0 1.8rem;min-width:15rem;font:700 var(--t-lead) var(--f-display);letter-spacing:.06em;text-transform:uppercase;color:var(--accent);text-decoration:none;border:0;background:none;cursor:pointer;isolation:isolate}
+.cta svg.f{position:absolute;inset:0;width:100%;height:100%;z-index:-1;overflow:visible}
+.cta .body{fill:var(--panel)}
+.cta .flood{fill:var(--accent);transform-origin:left;transform:scaleX(0);transition:transform .25s var(--ease)}
+.cta .ring{fill:none;stroke:var(--accent);stroke-opacity:.3;vector-effect:non-scaling-stroke}
+.cta .br{fill:none;stroke:var(--accent);vector-effect:non-scaling-stroke}
+.cta .arw{width:.85em;height:.65em;transition:transform .15s var(--ease)}
+.cta .arw path{stroke:currentColor;fill:none;stroke-width:1.4}
+.cta:hover,.cta:focus-visible{color:var(--panel)}
+.cta:hover .flood,.cta:focus-visible .flood{transform:scaleX(1)}
+.cta:hover .arw{transform:translateX(.3rem)}
+.cta{transition:color .25s var(--ease)}
+.lnk{font-weight:600;text-transform:uppercase;font-size:.9rem;letter-spacing:.06em;text-decoration:none;display:inline-flex;gap:.4rem;align-items:center}
+.lnk:hover{color:var(--accent-ink)}
+.brk::before{content:"[ "}.brk::after{content:" → ]"}
+
+/* ---------- Panneau à coins crochets ---------- */
+.bp{position:relative;padding:1.1rem 1.3rem 1.2rem}
+.bp i{position:absolute;width:.65rem;height:.65rem;border-color:currentColor;border-style:solid;border-width:0}
+.bp i:nth-child(1){top:0;left:0;border-top-width:1px;border-left-width:1px}
+.bp i:nth-child(2){top:0;right:0;border-top-width:1px;border-right-width:1px}
+.bp i:nth-child(3){bottom:0;left:0;border-bottom-width:1px;border-left-width:1px}
+.bp i:nth-child(4){bottom:0;right:0;border-bottom-width:1px;border-right-width:1px}
+.eyebrow{font-size:var(--t-label);font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-ink)}
+
+/* ---------- Pile collante ---------- */
+.layer{position:sticky;top:0;transform-origin:50% 0}
+.layer.last{position:relative;top:auto!important}
+.layer>.shade{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;z-index:40}
+
+/* ---------- En-tête ---------- */
+.mast{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:30;gap:1rem}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.logo svg{width:2.1rem;height:2.1rem}
+.logo b{font:700 1.25rem/1 var(--f-mark);letter-spacing:-.01em;color:var(--ink)}
+.logo small{display:block;font:600 .62rem/1 var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-top:.25rem}
+.nav{position:absolute;left:50%;transform:translateX(-50%);display:none}
+.nav ul{display:flex;gap:2.6rem;list-style:none;margin:0;padding:0}
+.nav a{font-size:var(--t-label);text-transform:uppercase;letter-spacing:.08em;font-weight:600;text-decoration:none;transition:color .15s var(--ease)}
+.nav a:hover{color:var(--accent-ink)}
+.mast-right{display:none}
+.burger{background:none;border:0;padding:.6rem;margin-right:-.6rem;cursor:pointer;display:grid;gap:.32rem}
+.burger span{display:block;width:1.5rem;height:1.5px;background:var(--ink)}
+@media(min-width:1180px){.nav,.mast-right{display:block}.burger{display:none}}
+.sheet{position:fixed;inset:0;z-index:70;background:var(--ground);display:flex;flex-direction:column;padding:calc(1.2rem + env(safe-area-inset-top,0px)) max(24px,env(safe-area-inset-right,0px)) calc(1.5rem + env(safe-area-inset-bottom,0px)) max(24px,env(safe-area-inset-left,0px));opacity:0;transition:opacity .25s var(--ease)}
+.sheet.open{opacity:1}
+.sheet-top{display:flex;justify-content:space-between;align-items:center}
+.sheet nav{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.1rem}
+.sheet nav a{font:700 2.6rem/.95 var(--f-display);text-transform:uppercase;text-decoration:none;opacity:0;transform:translateY(.75rem);transition:opacity .35s var(--ease),transform .35s var(--ease),color .15s}
+.sheet.open nav a{opacity:1;transform:none}
+.sheet nav a:hover{color:var(--accent-ink)}
+.x{background:none;border:0;width:2.6rem;height:2.6rem;position:relative;cursor:pointer}
+.x::before,.x::after{content:"";position:absolute;left:.5rem;right:.5rem;top:50%;height:1.5px;background:var(--ink);transform:rotate(45deg)}
+.x::after{transform:rotate(-45deg)}
+
+/* ---------- Héros ---------- */
+#hero{background:var(--ground);min-height:100svh;overflow:hidden;isolation:isolate}
+#hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
+#contours{z-index:0;opacity:.9}
+#scene{z-index:1}
+.hero-col{position:relative;z-index:10;min-height:100svh;display:flex;flex-direction:column;padding-block:1.4rem;gap:1.5rem}
+.hero-mid{flex:1;display:flex;flex-direction:column;gap:1.6rem;justify-content:flex-start}
+.ident .pre{display:block;font-size:var(--t-label);letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);margin-bottom:.8rem}
+.ident h1{font-size:var(--t-display);max-width:9.5em;font-weight:800}
+.ident h1 em{font-style:normal;color:var(--accent)}
+.meta{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;gap:.75rem}
+.meta li{display:flex;align-items:center;gap:.6rem;font-size:var(--t-lead);text-transform:uppercase;font-weight:600;line-height:1.1;letter-spacing:.02em}
+.meta li svg{width:1rem;height:1rem;flex:none}
+.panels{display:none;gap:1.5rem}
+.panels dl{margin:1rem 0 0;display:grid;gap:.35rem;text-transform:uppercase;font-size:var(--t-body);line-height:1.05}
+.panels dt{font-weight:700}
+.panels dd{margin:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1.2rem}
+.stats div{text-align:left}
+.stats dt{font-size:.72rem;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap;color:var(--ink-soft);font-weight:600}
+.stats dd{margin:.35rem 0 0;white-space:nowrap;font:600 2rem/.8 var(--f-display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.actions{display:flex;flex-direction:column;gap:1rem}
+.actions .socials{display:none;gap:2rem;justify-self:end}
+.actions .socials a{text-transform:uppercase;font-size:var(--t-body);text-decoration:none;font-weight:600}
+.actions .socials a:hover{color:var(--accent-ink)}
+.promise{font-size:.85rem;color:var(--ink-soft);display:flex;gap:.5rem;align-items:center}
+.promise::before{content:"";width:.5rem;height:.5rem;background:var(--accent);transform:rotate(45deg);flex:none}
+.hero-space{height:44svh}
+@media(min-width:640px){
+  .panels{display:flex;flex-wrap:wrap}
+  .panels .bp{flex:1 1 15rem}
+  .actions{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:2rem}
+  .actions .socials{display:flex}
+}
+@media(min-width:1180px){
+  .hero-col{padding-block:1.6rem}
+  .hero-space{display:none}
+  .hero-mid{flex-direction:row;align-items:center;justify-content:space-between}
+  .ident{max-width:34rem}
+  .panels{flex-direction:column;width:16rem;flex-wrap:nowrap}
+  .panels .bp{flex:none}
+}
+.ramp{position:absolute;inset:auto 0 0 0;height:30%;z-index:5;pointer-events:none;background:linear-gradient(to bottom,rgba(245,247,249,0),rgba(245,247,249,.35) 40%,rgba(245,247,249,.85) 80%,var(--ground))}
+@media(min-width:1180px){.ramp{display:none}}
+.hero-space .fallback-hex{position:static;transform:none;width:auto;height:100%;margin:0 auto;display:block;aspect-ratio:100/115}
+.hero-space .fallback-hex svg{height:100%;width:auto;display:block;margin:0 auto}
+.fallback-hex{position:absolute;z-index:1;left:50%;top:58%;width:min(70vw,30rem);transform:translate(-50%,-50%);opacity:.9}
+@media(min-width:1180px){.fallback-hex{top:50%}}
+
+/* Entrée */
+.rise{opacity:0;transform:translateY(1.2rem);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.go .rise{opacity:1;transform:none}
+.word{display:inline-block;opacity:0;transform:translateY(.4em);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.go .word{opacity:1;transform:none}
+
+/* ---------- Voile de chargement ---------- */
+#veil{position:fixed;inset:0;z-index:80;background:var(--ground);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s var(--ease)}
+#veil .hexfill{width:6.4rem;height:7.4rem;position:relative}
+#veil .hexfill svg{position:absolute;inset:0;width:100%;height:100%}
+#veil .name{margin-top:1.6rem;font-size:var(--t-lead);letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+#veil .meter{position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--line)}
+#veil .meter b{display:block;height:100%;background:var(--ink);transform-origin:left;transform:scaleX(0)}
+#veil.out{opacity:0;pointer-events:none}
+
+/* ---------- Le métier (sombre) ---------- */
+#metier{background:var(--panel);color:var(--on-panel);min-height:100svh;overflow:hidden;isolation:isolate}
+#cheq{position:absolute;left:0;right:0;top:0;width:100%;height:180px;z-index:3;pointer-events:none}
+#dots{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.metier-in{position:relative;z-index:5;min-height:100svh;display:grid;gap:2rem;padding-block:7rem 2.5rem;grid-template-columns:1fr}
+.metier-in h2{font-size:var(--t-display);font-weight:800}
+.metier-in h2 em{font-style:normal;color:var(--accent)}
+.metier-copy p{max-width:34rem;margin-top:1.2rem;color:var(--on-panel-soft);font-size:var(--t-lead)}
+.chain{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-top:1.6rem}
+.chain span{border:1px solid #33416A;padding:.55rem .8rem;font:600 1rem/1 var(--f-display);text-transform:uppercase;letter-spacing:.05em}
+.chain span.hot{background:var(--accent);border-color:var(--accent);color:var(--panel)}
+.chain b{color:var(--accent);font-weight:700}
+.track-wrap{position:relative;min-width:0}
+.track-wrap .cap{display:flex;justify-content:space-between;gap:1rem;color:var(--on-panel-soft);margin-bottom:.6rem}
+#track{width:100%;height:auto;display:block;overflow:visible}
+#track .base{fill:none;stroke:#26335A;stroke-width:14;stroke-linecap:round;stroke-linejoin:round}
+#track .dash{fill:none;stroke:#3A4A7A;stroke-width:1;stroke-dasharray:6 8}
+#track .lap{fill:none;stroke:var(--accent);stroke-width:4;stroke-linecap:round}
+#track .glow{fill:none;stroke:var(--accent);stroke-width:14;stroke-linecap:round;opacity:.28;filter:url(#blur)}
+#track .head{fill:#fff}
+#track .mk circle.o{fill:var(--panel);stroke:#3A4A7A;stroke-width:2;transition:stroke .3s,fill .3s}
+#track .mk.on circle.o{stroke:var(--accent);fill:var(--accent)}
+#track .mk text{font:700 22px var(--f-display);fill:var(--on-panel-soft);text-transform:uppercase;letter-spacing:.04em;transition:fill .3s}
+#track .mk.on text{fill:var(--on-panel)}
+#track .mk .n{font:800 15px var(--f-display);fill:var(--on-panel);text-anchor:middle;dominant-baseline:central}
+#track .mk.on .n{fill:var(--panel)}
+.steps-list{display:none;list-style:none;margin:.8rem 0 0;padding:0;grid-template-columns:1fr 1fr;gap:.45rem 1rem;counter-reset:st}
+.steps-list li{counter-increment:st;font:600 1rem/1.2 var(--f-display);text-transform:uppercase;letter-spacing:.03em;display:flex;gap:.5rem;align-items:center}
+.steps-list li::before{content:counter(st);width:1.4rem;height:1.4rem;flex:none;display:grid;place-items:center;border-radius:50%;background:var(--accent);color:var(--panel);font-size:.8rem}
+@media(max-width:700px){#track .mk text:not(.n){display:none}.steps-list{display:grid}}
+.plate{background:rgba(10,19,40,.86);border:1px solid #26335A;padding:1.2rem 1.4rem;display:grid;gap:0;align-self:end;backdrop-filter:blur(4px)}
+.plate .row{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:baseline;padding:.65rem 0;border-bottom:1px solid #1E2A4C}
+.plate .row:last-of-type{border-bottom:0}
+.plate .v{font:700 2rem/1 var(--f-display);color:var(--on-panel);font-variant-numeric:tabular-nums;min-width:5.2rem}
+.plate .k{font-size:.85rem;text-transform:uppercase;letter-spacing:.04em;color:var(--on-panel-soft);font-weight:600}
+.plate small{display:block;margin-top:.6rem;font-size:.72rem;color:#6F7EA0}
+@media(min-width:1100px){
+  .metier-in{grid-template-columns:minmax(0,26rem) minmax(0,1fr);grid-template-rows:auto 1fr;align-items:start;column-gap:3rem}
+  .metier-copy{grid-row:1/3}
+  .plate{grid-column:2;justify-self:end;width:min(100%,24rem)}
+}
+
+/* ---------- Frise ---------- */
+#parcours{background:#070D1E;color:var(--on-panel);position:relative;z-index:2}
+.parcours-head{padding-block:5.5rem 3rem;display:grid;gap:1rem;text-align:center;justify-items:center}
+.parcours-head h2{font-size:var(--t-display);font-weight:800}
+.parcours-head p{color:var(--on-panel-soft);max-width:36rem;font-size:var(--t-lead)}
+.rows{position:relative;padding-bottom:5rem}
+.rail{display:none}
+.row-step{display:grid;grid-template-columns:1fr;gap:1.2rem;padding-block:1.6rem;transition:opacity .3s var(--ease)}
+.rows:hover .row-step{opacity:.4}.rows .row-step:hover{opacity:1}
+@media (hover:none){.rows:hover .row-step{opacity:1}}
+.plate-ill{position:relative;aspect-ratio:1420/1016;max-width:100%;background:var(--panel-2);clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,28px 100%,0 calc(100% - 28px));overflow:hidden}
+.plate-ill svg{position:absolute;inset:0;width:100%;height:100%}
+.step-txt{display:grid;gap:.7rem;align-content:center}
+.num{font:800 clamp(3.4rem,8vw,6rem)/.85 var(--f-display);color:var(--on-panel);opacity:.4;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.num span{display:inline-block;transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.num.pre span{opacity:0;transform:translateY(.3em)}
+.row-step.lit .num{opacity:1}
+.step-txt h3{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:700}
+.step-txt p{color:var(--on-panel-soft);max-width:30rem;font-size:var(--t-lead)}
+.step-txt .tag{justify-self:start;font-size:var(--t-label);letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--accent)}
+@media(min-width:900px){
+  .rail{display:block;position:absolute;top:0;bottom:5rem;left:50%;width:1px;background:#1E2A4C}
+  .rail .thread{position:absolute;left:0;top:0;width:1px;background:#fff;height:0}
+  .rail .mark{position:absolute;left:-7px;top:0;width:15px;height:15px;border:1.5px solid var(--accent);background:#070D1E}
+  .row-step{grid-template-columns:1fr 1fr;gap:6rem;padding-block:2.4rem}
+  .row-step:nth-child(odd) .plate-ill{order:2}
+  .row-step:nth-child(odd) .step-txt{order:1;justify-items:end;text-align:right}
+  .row-step:nth-child(odd) .step-txt .tag{justify-self:end}
+}
+
+/* ---------- Le mot du directeur ---------- */
+#directeur{background:var(--ground);position:relative;overflow:hidden;isolation:isolate}
+#contours2{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.dir-in{position:relative;z-index:2;padding-block:6rem 4rem;display:grid;gap:2.5rem}
+.dir-in h2{font-size:var(--t-impact);font-weight:800}
+.quote{max-width:42rem;display:grid;gap:1.1rem;font-size:var(--t-lead)}
+.quote p:first-child{font:600 clamp(1.5rem,2.6vw,2rem)/1.15 var(--f-display);text-transform:uppercase;color:var(--ink)}
+.sig{display:flex;gap:1rem;align-items:center;margin-top:.6rem}
+.sig .ini{width:3rem;height:3rem;display:grid;place-items:center;background:var(--panel);color:var(--accent);font:800 1.2rem var(--f-display);clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)}
+.sig b{display:block;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.sig span{font-size:.9rem;color:var(--ink-soft)}
+.dir-side{display:grid;gap:1.4rem;align-content:start}
+@media(min-width:1000px){.dir-in{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:end}.dir-in h2{grid-column:1/-1}}
+.cal{background:var(--panel);color:var(--on-panel);position:relative;z-index:2}
+.cal-in{padding-block:2.6rem 2.8rem;display:grid;gap:1.4rem}
+.cal-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;align-items:baseline}
+.cal-head h3{font-size:var(--t-heading)}
+.cal-head p{color:var(--on-panel-soft)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.6rem;position:relative}
+.card{position:relative;padding:1rem 1rem 1.1rem;border:1px solid #26335A;display:grid;gap:.35rem}
+.card .d{font:800 2.6rem/.9 var(--f-display);font-variant-numeric:tabular-nums}
+.card .m{text-transform:uppercase;font-weight:600;letter-spacing:.06em;font-size:.85rem}
+.card .h{font-size:.85rem;color:var(--on-panel-soft)}
+.card.next{border-color:var(--accent)}
+.card.next .tagn{position:absolute;top:-.7rem;left:.8rem;background:var(--accent);color:var(--panel);font:700 .72rem/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;padding:.3rem .5rem}
+.card.next::after{content:"";position:absolute;right:.8rem;top:.9rem;width:.55rem;height:.55rem;border-radius:50%;background:var(--accent);animation:pulse 3.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,100,20,.6)}70%{box-shadow:0 0 0 12px rgba(255,100,20,0)}100%{box-shadow:0 0 0 0 rgba(255,100,20,0)}}
+.card:not(:last-child)::before{content:"";position:absolute;top:50%;right:-1.6rem;width:1.6rem;border-top:1px dashed #4A5A8A}
+@media(max-width:700px){.card:not(:last-child)::before{display:none}}
+.cal .where{color:var(--on-panel-soft);font-size:.95rem}
+
+
+/* ---------- Formulaires ---------- */
+#postuler{background:#EAEEF3}
+.post-in{padding-block:6rem;display:grid;gap:2rem}
+.post-head{display:grid;gap:.8rem}
+.post-head h2{font-size:var(--t-display);font-weight:800}
+.post-head .promise{font-size:1rem;color:var(--ink)}
+.fcard{background:#fff;border:1px solid var(--line);padding:1.6rem;display:grid;gap:1.1rem;max-width:44rem;min-width:0}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem}
+label.f{display:grid;gap:.35rem;font-weight:600;font-size:.92rem}
+input,select,textarea{font:inherit;font-weight:400;padding:.8rem .9rem;border:1.5px solid var(--line);border-radius:0;background:var(--ground);color:var(--ink);width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--ink);outline:none}
+textarea{min-height:5.5rem;resize:vertical}
+fieldset{border:0;padding:0;margin:0;display:grid;gap:.5rem}
+legend{font-weight:600;font-size:.92rem;margin-bottom:.5rem;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:inline-block;padding:.55rem .9rem;border:1.5px solid var(--line);font-weight:600;font-size:.92rem;cursor:pointer;background:var(--ground)}
+.chips input:checked+span{background:var(--ink);border-color:var(--ink);color:#fff}
+.chips input:focus-visible+span{outline:3px solid var(--accent);outline-offset:2px}
+.chk{display:grid;grid-template-columns:20px 1fr;gap:.6rem;font-size:.86rem;color:var(--ink-soft);align-items:start}
+.chk input{width:18px;height:18px;padding:0;margin-top:.15rem}
+.file{font-size:.9rem}
+.err{color:#B3261E;font-size:.88rem;font-weight:600}
+.ok{background:var(--panel);color:var(--on-panel);padding:1.2rem 1.3rem;display:grid;gap:.4rem}
+.ok b{font:700 1.4rem var(--f-display);text-transform:uppercase;color:var(--accent)}
+.direct{display:flex;flex-wrap:wrap;gap:1.4rem 2.4rem;font-size:.95rem}
+.direct div b{display:block;font:700 1.35rem var(--f-display);letter-spacing:.03em}
+.copy{font:600 .78rem var(--f-body);text-transform:uppercase;letter-spacing:.06em;padding:.3rem .6rem;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;margin-left:.4rem;vertical-align:middle}
+
+/* ---------- FAQ ---------- */
+.faq{padding-block:5rem;display:grid;gap:1.5rem}
+.faq h2{font-size:var(--t-heading)}
+details{border-bottom:1px solid var(--line);padding:1.05rem 0}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem;font-weight:700;font-size:1.08rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:700 1.6rem/1 var(--f-display);color:var(--accent-ink)}
+details[open] summary::after{content:"–"}
+details p{margin-top:.6rem;color:var(--ink-soft);max-width:70ch}
+
+/* ---------- Pied de page ---------- */
+footer{background:var(--accent);padding:16px;padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+.foot{background:var(--panel);color:var(--on-panel);position:relative;overflow:hidden;isolation:isolate}
+#contours3{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.1}
+.foot-in{position:relative;z-index:2;padding-block:4.5rem 2rem;display:grid;gap:3rem}
+.foot-in h2{font-size:var(--t-impact);font-weight:800;max-width:10em}
+.foot-in h2 em{font-style:normal;color:var(--accent)}
+.fcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;font-size:.95rem}
+.fcols h4{margin:0 0 .7rem;font:700 .8rem var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--on-panel-soft)}
+.fcols ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
+.fcols a{text-decoration:none}.fcols a:hover{color:var(--accent)}
+.legal{border-top:1px solid #1E2A4C;padding-top:1.4rem;display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;justify-content:space-between;font-size:.82rem;color:var(--on-panel-soft)}
+.legal button{background:none;border:0;color:inherit;font:inherit;text-decoration:underline;cursor:pointer;padding:0}
+.certs{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+.certs .q{background:#fff;padding:.4rem .6rem;display:flex;align-items:center}
+.certs .q img{height:46px;width:auto;display:block}
+.certs p{max-width:22rem;font-size:.78rem;line-height:1.4}
+.ph{background:rgba(255,100,20,.2);color:#FFB287;padding:0 .3em}
+
+/* ---------- Fenêtre mentions ---------- */
+.modal{position:fixed;inset:0;z-index:90;background:rgba(7,13,30,.6);display:flex;align-items:flex-end;justify-content:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px))}
+.modal .box{background:#fff;color:var(--ink);width:100%;max-width:46rem;max-height:86svh;overflow:auto;padding:1.6rem 1.6rem calc(2rem + env(safe-area-inset-bottom,0px));display:grid;gap:1rem}
+.modal h3{font-size:1.8rem}
+.modal h4{margin:.6rem 0 0;font-size:.95rem;text-transform:uppercase;letter-spacing:.06em}
+.modal p,.modal li{font-size:.92rem;color:var(--ink-soft)}
+.modal ul{margin:0;padding-left:1.2em;display:grid;gap:.5rem}
+.modal .maj{font-size:.82rem}
+.modal .tw{overflow-x:auto}
+.modal table{border-collapse:collapse;width:100%;font-size:.86rem;color:var(--ink-soft)}
+.modal th,.modal td{border:1px solid #DCE1EC;padding:.45rem .6rem;text-align:left;vertical-align:top}
+.modal table{table-layout:fixed}
+.modal th,.modal td{overflow-wrap:anywhere;hyphens:auto}
+.modal th{background:#F2F4F8;font-weight:600}
+.modal a{color:inherit;text-decoration:underline}
+.modal h5{margin:.3rem 0 0;font-size:.9rem}
+@media(min-width:700px){.modal{align-items:center;padding-bottom:16px}}
+.mt{display:flex;justify-content:space-between;align-items:center}
+</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+
+<div id="veil" role="status" aria-label="Chargement de Talentys">
+  <div class="hexfill" aria-hidden="true">
+    <svg viewBox="0 0 100 115"><defs><clipPath id="hc"><polygon points="50,2 98,29.5 98,85.5 50,113 2,85.5 2,29.5"/></clipPath></defs>
+      <polygon points="50,2 98,29.5 98,85.5 50,113 2,85.5 2,29.5" fill="#0B1A33" opacity=".12"/>
+      <rect id="vfill" x="0" y="115" width="100" height="115" fill="#0B1A33" clip-path="url(#hc)"/>
+    </svg>
+  </div>
+  <p class="name">Talentys</p>
+  <div class="meter"><b id="vmeter"></b></div>
+</div>
+
+<div id="stack">
+<!-- ===================== HÉROS ===================== -->
+<section id="hero" class="layer" aria-labelledby="h1">
+  <canvas id="contours" aria-hidden="true"></canvas>
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="ramp" aria-hidden="true"></div>
+  <div class="hero-col gut frame">
+    <header class="mast rise" style="transition-delay:0ms">
+      <a class="logo" href="#hero" aria-label="Talentys École des Commerciaux, accueil">
+        <svg viewBox="0 0 100 115" aria-hidden="true"><g fill="none" stroke="#0B1A33" stroke-width="5" stroke-linejoin="round"><polygon points="50,4 96,30.5 96,84.5 50,111 4,84.5 4,30.5"/><path d="M50 4 L36 57.5 L50 111 M96 30.5 L36 57.5 M4 84.5 L64 57.5 M50 4 L64 57.5"/></g><path d="M36 57.5 L50 4 L60 30 Z M64 57.5 L50 111 L40 85 Z" fill="#FF6414"/></svg>
+        <span><b>Talentys</b><small>École des commerciaux</small></span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <ul>
+          <li><a href="#metier">La formation</a></li>
+          <li><a href="#calendrier">Job dating</a></li>
+          <li><a href="#parcours">Ton parcours</a></li>
+          <li><a href="#directeur">L'école</a></li>
+          <li><a href="#postuler">Postuler</a></li>
+        </ul>
+      </nav>
+      <a class="lnk mast-right" href="#postuler"><b class="brk">Postuler</b></a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
+    </header>
+
+    <div class="hero-mid">
+      <div class="ident">
+        <span class="pre rise" style="transition-delay:180ms">Prochaine rentrée : novembre 2026 · Tu as le goût du défi ?</span>
+        <h1 id="h1"><span class="sr">Deviens le commercial que toutes les entreprises recherchent</span><span aria-hidden="true" id="h1w"></span></h1>
+        <ul class="meta">
+          <li class="rise" style="transition-delay:440ms"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="#FF6414"/></svg>Formation 100 % financée</li>
+          <li class="rise" style="transition-delay:570ms"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="#FF6414"/></svg>100 % rémunérée, salaire dès le 1er mois</li>
+          <li class="rise" style="transition-delay:700ms"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="#FF6414"/></svg>Titre Bac+2 reconnu par l'État</li>
+          <li class="rise" style="transition-delay:830ms"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="#FF6414"/></svg>Accessible sans le Bac</li>
+        </ul>
+      </div>
+      <div class="hero-space" aria-hidden="true"></div>
+      <div class="panels rise" style="transition-delay:900ms">
+        <div class="bp"><i></i><i></i><i></i><i></i>
+          <p class="eyebrow">Prochain job dating</p>
+          <dl><dt id="heroDate">Vendredi</dt><dd>10 h – 14 h · sur inscription</dd><dd>16-25 ans · Bagnolet</dd></dl>
+        </div>
+        <div class="bp"><i></i><i></i><i></i><i></i>
+          <p class="eyebrow">Ta formation</p>
+          <dl class="stats">
+            <div><dt>Frais</dt><dd>0 €</dd></div>
+            <div><dt>Niveau</dt><dd>Bac+2</dd></div>
+            <div><dt>Durée</dt><dd>14 mois</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions rise" style="transition-delay:1300ms">
+      <div class="promise">Candidature en 2 minutes · réponse sous 24 h</div>
+      <a class="cta" href="#postuler">
+        <svg class="f" viewBox="0 0 220 50" preserveAspectRatio="none" aria-hidden="true"><path class="body" d="M220 42L212.9 50H0V0H220Z"/><path class="flood" d="M220 42L212.9 50H0V0H220Z"/><path class="ring" d="M220 42L212.9 50H0V0H220Z"/><path class="br" d="M205 49.5H213L219.5 42V36M212 .5H219.5V7M8 .5H.5V7M7.5 49.5H.5V42.5"/></svg>
+        Postuler en 2 minutes <svg class="arw" viewBox="0 0 13.7 10.7" aria-hidden="true"><path d="M0 5.35H13M8 10.35L13 5.35L8 .35"/></svg>
+      </a>
+      <div class="socials"><a href="https://www.instagram.com/cfa.talentys/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/profile.php?id=61595436711773" target="_blank" rel="noopener">Facebook</a></div>
+    </div>
+  </div>
+  <div class="shade"></div>
+</section>
+
+<!-- ===================== LE MÉTIER ===================== -->
+<section id="metier" class="layer" aria-labelledby="h-metier">
+  <canvas id="dots" aria-hidden="true"></canvas>
+  <canvas id="cheq" aria-hidden="true"></canvas>
+  <div class="metier-in gut frame">
+    <div class="metier-copy">
+      <p class="eyebrow" style="color:var(--accent)">Le métier · Négociateur technico-commercial</p>
+      <h2 id="h-metier" style="margin-top:1rem">Plus tu vends,<br><em>plus tu gagnes.</em></h2>
+      <p>Un commercial a un objectif : vendre. Chaque vente fait monter le chiffre d'affaires de l'entreprise. Et toutes nos entreprises partenaires récompensent ce chiffre d'affaires en plus par des commissions.</p>
+      <div class="chain" aria-label="Tu vends, le chiffre d'affaires monte, tu touches des commissions">
+        <span>Tu vends</span><b aria-hidden="true">→</b><span>Le CA monte</span><b aria-hidden="true">→</b><span class="hot">Tu gagnes</span>
+      </div>
+      <p>Chez Talentys, tu apprends la méthode des pros : trouver des clients, comprendre leur besoin, construire une offre et signer.</p>
+    </div>
+    <div class="track-wrap">
+      <div class="cap label"><span>Le cycle de vente</span><span id="lapState">7 étapes</span></div>
+      <svg id="track" viewBox="0 0 1000 600" role="img" aria-label="Le cycle de vente en 7 étapes : préparer, prospecter, découvrir les besoins, proposer, négocier, conclure, suivre et fidéliser. Le suivi relance le cycle.">
+        <defs><filter id="blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter></defs>
+        <path class="dash" d="M60 300H940M500 30V570"/>
+        <path id="tp" class="base" d="M170 120 C 300 60, 520 70, 640 110 S 900 140, 900 250 C 900 340, 820 360, 720 380 S 600 470, 520 520 C 430 575, 230 560, 150 470 C 80 390, 120 330, 210 300 S 250 220, 170 200 C 110 185, 110 140, 170 120 Z"/>
+        <path id="lapGlow" class="glow" d="M170 120 C 300 60, 520 70, 640 110 S 900 140, 900 250 C 900 340, 820 360, 720 380 S 600 470, 520 520 C 430 575, 230 560, 150 470 C 80 390, 120 330, 210 300 S 250 220, 170 200 C 110 185, 110 140, 170 120 Z"/>
+        <path id="lap" class="lap" d="M170 120 C 300 60, 520 70, 640 110 S 900 140, 900 250 C 900 340, 820 360, 720 380 S 600 470, 520 520 C 430 575, 230 560, 150 470 C 80 390, 120 330, 210 300 S 250 220, 170 200 C 110 185, 110 140, 170 120 Z"/>
+        <g id="marks"></g>
+        <circle id="head" class="head" r="5" opacity="0"/>
+      </svg>
+      <ol class="steps-list" aria-hidden="true"><li>Préparer</li><li>Prospecter</li><li>Découvrir les besoins</li><li>Proposer</li><li>Négocier</li><li>Conclure</li><li>Suivre et fidéliser</li></ol>
+    </div>
+    <div class="plate">
+      <div class="row"><span class="v">0 €</span><span class="k">Frais de formation pour toi</span></div>
+      <div class="row"><span class="v">4 + 1</span><span class="k">4 jours en entreprise, 1 jour à l'école</span></div>
+      <div class="row"><span class="v">14 mois</span><span class="k">De contrat, sans besoin du Bac pour entrer</span></div>
+      <div class="row"><span class="v">9</span><span class="k">Compétences, 2 blocs, 1 titre RNCP39063</span></div>
+      <div class="row"><span class="v">84 %</span><span class="k">D'insertion à 6 mois*</span></div>
+      <small>* Chiffre national du titre (certifiés 2022), source France Compétences. Ce n'est pas un résultat propre à Talentys.</small>
+    </div>
+  </div>
+  <div class="shade"></div>
+</section>
+
+<!-- ===================== PARCOURS ===================== -->
+<section id="parcours" class="layer last" aria-labelledby="h-parcours">
+  <div class="parcours-head gut">
+    <p class="eyebrow" style="color:var(--accent)">Ton parcours</p>
+    <h2 id="h-parcours">Du lycée au CDI</h2>
+    <p>Sept étapes entre ta candidature et ton premier poste de commercial. On t'accompagne à chacune.</p>
+  </div>
+  <div class="rows gut frame" id="rows">
+    <div class="rail" aria-hidden="true"><div class="thread" id="thread"></div><div class="mark" id="railMark"></div></div>
+  </div>
+</section>
+</div>
+
+<!-- ===================== LE MOT DU DIRECTEUR ===================== -->
+<section id="directeur" aria-labelledby="h-dir">
+  <canvas id="contours2" aria-hidden="true"></canvas>
+  <div class="dir-in gut frame">
+    <h2 id="h-dir">Le mot<br>du directeur</h2>
+    <div class="quote">
+      <p>« La vente ne s'apprend pas dans un livre. Elle s'apprend face à un client. »</p>
+      <p>Chez Talentys École des Commerciaux, on part d'une idée simple : les entreprises cherchent des commerciaux, et des jeunes motivés cherchent une vraie chance. Ici, on ne te demande pas d'expérience. On te demande de l'envie, de la ponctualité et le goût du défi.</p>
+      <p>Pendant ta formation, tu passes 4 jours par semaine sur le terrain, dans une entreprise partenaire qui compte sur toi. Le 5e jour, on te donne la méthode : prospecter, découvrir un besoin, négocier, conclure. Tu progresses vite, parce que tu appliques dès le lendemain ce que tu as appris en cours.</p>
+      <p>Viens me rencontrer un vendredi. Je serai là.</p>
+      <div class="sig"><div class="ini" aria-hidden="true">GB</div><div><b>Gabriel Berrada</b><span>Directeur commercial, Talentys École des Commerciaux</span></div></div>
+    </div>
+    <div class="dir-side">
+      <p class="muted">Le job dating, c'est le premier pas. Il se fait sur inscription : tu envoies ta candidature, on t'appelle pour réserver ta place. Tu viens avec ton CV, tu rencontres l'équipe et des entreprises qui recrutent, et tu repars en sachant exactement ce qui t'attend.</p>
+      <a class="cta" href="#postuler" style="justify-self:start">
+        <svg class="f" viewBox="0 0 220 50" preserveAspectRatio="none" aria-hidden="true"><path class="body" d="M220 42L212.9 50H0V0H220Z"/><path class="flood" d="M220 42L212.9 50H0V0H220Z"/><path class="ring" d="M220 42L212.9 50H0V0H220Z"/><path class="br" d="M205 49.5H213L219.5 42V36M212 .5H219.5V7M8 .5H.5V7M7.5 49.5H.5V42.5"/></svg>
+        M'inscrire au job dating <svg class="arw" viewBox="0 0 13.7 10.7" aria-hidden="true"><path d="M0 5.35H13M8 10.35L13 5.35L8 .35"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="cal" id="calendrier">
+    <div class="cal-in gut frame">
+      <div class="cal-head"><h3>Les 5 prochains job datings</h3><p>Tous les vendredis · 10 h – 14 h · sur inscription · 16-25 ans</p></div>
+      <div class="cards" id="cards"></div>
+      <p class="where">Inscription obligatoire : envoie ta candidature, on t'appelle pour réserver ta place. 6 rue Sadi Carnot, 93170 Bagnolet · À apporter : ton CV imprimé et une pièce d'identité.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== POSTULER ===================== -->
+<section id="postuler" aria-labelledby="h-post">
+  <div class="post-in gut frame">
+    <div class="post-head">
+      <p class="eyebrow">Postuler</p>
+      <h2 id="h-post">Ta candidature en 2 minutes</h2>
+      <p class="muted" style="max-width:40rem">Ta candidature vaut inscription au job dating : tu reçois un email de confirmation et on t'appelle pour réserver ta place.</p>
+      <p class="promise">Réponse et premier échange téléphonique sous 24 h</p>
+    </div>
+
+    <form class="fcard" id="formC" novalidate>
+      <div class="two">
+        <label class="f" for="cPrenom">Prénom<input id="cPrenom" name="prenom" required autocomplete="given-name"></label>
+        <label class="f" for="cNom">Nom<input id="cNom" name="nom" required autocomplete="family-name"></label>
+      </div>
+      <div class="two">
+        <label class="f" for="cTel">Téléphone<input id="cTel" name="tel" type="tel" required autocomplete="tel" inputmode="tel"></label>
+        <label class="f" for="cMail">Email<input id="cMail" name="email" type="email" required autocomplete="email"></label>
+      </div>
+      <div class="two">
+        <label class="f" for="cAge">Âge<input id="cAge" name="age" type="number" min="16" max="25" required inputmode="numeric"></label>
+        <label class="f file" for="cCv">CV (facultatif)<input id="cCv" name="cv" type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"></label>
+      </div>
+      <fieldset>
+        <legend>Ton niveau actuel</legend>
+        <div class="chips">
+          <label><input type="radio" name="niveau" id="nv1" value="3e / CAP / BEP"><span>3e, CAP ou BEP</span></label>
+          <label><input type="radio" name="niveau" id="nv2" value="Bac en cours"><span>Bac en cours</span></label>
+          <label><input type="radio" name="niveau" id="nv3" value="Bac obtenu"><span>Bac obtenu</span></label>
+          <label><input type="radio" name="niveau" id="nv4" value="Bac+1 ou plus"><span>Bac+1 ou plus</span></label>
+        </div>
+      </fieldset>
+      <label class="chk" for="cOk"><input id="cOk" type="checkbox" required><span>J'accepte que Talentys utilise ces informations pour me recontacter au sujet de la formation et du job dating. Je peux demander leur suppression à tout moment.</span></label>
+      <label class="chk" for="cParent" id="parentRow" hidden><input id="cParent" type="checkbox"><span>J'ai moins de 18 ans : un de mes parents est d'accord pour que je candidate.</span></label>
+      <p class="err" id="cErr" hidden></p>
+      <button class="cta" type="submit" style="justify-self:start">
+        <svg class="f" viewBox="0 0 220 50" preserveAspectRatio="none" aria-hidden="true"><path class="body" d="M220 42L212.9 50H0V0H220Z"/><path class="flood" d="M220 42L212.9 50H0V0H220Z"/><path class="ring" d="M220 42L212.9 50H0V0H220Z"/><path class="br" d="M205 49.5H213L219.5 42V36M212 .5H219.5V7M8 .5H.5V7M7.5 49.5H.5V42.5"/></svg>
+        Envoyer ma candidature <svg class="arw" viewBox="0 0 13.7 10.7" aria-hidden="true"><path d="M0 5.35H13M8 10.35L13 5.35L8 .35"/></svg>
+      </button>
+      <div class="ok" id="cOkMsg" hidden></div>
+    </form>
+
+
+    <div class="direct">
+      <div><span class="label muted">WhatsApp candidats</span><b><span id="wa">07 76 21 82 86</span><button class="copy" type="button" data-copy="0776218286">Copier</button></b></div>
+      <div><span class="label muted">Accueil</span><b>01 89 62 93 26</b></div>
+      <div><span class="label muted">Email</span><b style="text-transform:none">direction@talentys.info</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section aria-labelledby="h-faq">
+  <div class="faq gut frame">
+    <h2 id="h-faq">Questions fréquentes</h2>
+    <div>
+      <details><summary>Je n'ai aucune expérience dans la vente, je peux postuler ?</summary><p>Oui. On ne te demande pas d'expérience, on te demande de la motivation. Tu apprends le métier sur le terrain et à l'école.</p></details>
+      <details><summary>Est-ce que je paie quelque chose ?</summary><p>Non. La formation est financée à 100 %. Tu es salarié de ton entreprise et tu touches un salaire chaque mois.</p></details>
+      <details><summary>Comment je gagne plus ?</summary><p>Ton objectif de commercial, c'est de vendre. Toutes nos entreprises partenaires récompensent tes ventes par des commissions, en plus de ton salaire. Plus tu vends, plus tu gagnes.</p></details>
+      <details><summary>Je n'ai pas encore d'entreprise, je fais comment ?</summary><p>Viens au job dating un vendredi. Tu y rencontres des entreprises partenaires qui recrutent, et notre équipe continue de t'accompagner jusqu'à la signature.</p></details>
+      <details><summary>Faut-il avoir le Bac ?</summary><p>Non. La formation est accessible sans le Bac. Ce qui compte, c'est ta motivation.</p></details>
+      <details><summary>Combien de temps dure la formation ?</summary><p>14 mois en contrat d'apprentissage, avec 4 jours en entreprise et 1 jour à l'école chaque semaine. Prochaine rentrée : novembre 2026.</p></details>
+      <details><summary>Je suis en situation de handicap, je peux postuler ?</summary><p>Oui, la formation est accessible aux personnes en situation de handicap. Parle-nous de tes besoins lors de notre premier appel : on adapte ton accueil et ta formation.</p></details>
+      <details><summary>Je dois m'inscrire pour venir au job dating ?</summary><p>Oui, l'inscription est obligatoire. Envoie ta candidature en 2 minutes, on t'appelle sous 24 h pour réserver ta place.</p></details>
+      <details><summary>J'ai moins de 18 ans, c'est possible ?</summary><p>Oui, dès 16 ans. Un de tes parents doit être d'accord pour ta candidature et signer le contrat avec toi.</p></details>
+      <details><summary>Quel diplôme j'obtiens ?</summary><p>Le titre professionnel Négociateur technico-commercial (RNCP39063), niveau 5, équivalent Bac+2, délivré par le ministère du Travail. Il ouvre aux postes de technico-commercial, chargé d'affaires, commercial B2B ou business developer.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PIED DE PAGE ===================== -->
+<footer>
+  <div class="foot">
+    <canvas id="contours3" aria-hidden="true"></canvas>
+    <div class="foot-in gut frame">
+      <h2>La vente s'apprend.<br><em>Sur le terrain.</em></h2>
+      <div class="fcols">
+        <div><h4>L'école</h4><ul><li><a href="#metier">La formation</a></li><li><a href="#parcours">Ton parcours</a></li><li><a href="#directeur">Le mot du directeur</a></li><li><a href="#calendrier">Job dating</a></li></ul></div>
+        <div><h4>Postuler</h4><ul><li><a href="#postuler">Candidature en 2 minutes</a></li><li><a href="#calendrier">Prochains job datings</a></li></ul></div>
+        <div><h4>Nous trouver</h4><ul><li>6 rue Sadi Carnot</li><li>93170 Bagnolet</li><li>01 89 62 93 26</li><li>direction@talentys.info</li></ul></div>
+        <div><h4>Suivre Talentys</h4><ul><li><a href="https://www.instagram.com/cfa.talentys/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/profile.php?id=61595436711773" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+      </div>
+      <div class="legal">
+        <div class="certs">
+          <div class="q"><img alt="Qualiopi, processus certifié, République française" src="data:image/png;base64,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"></div>
+          <p>La certification qualité a été délivrée au titre des catégories : actions de formation ; actions de formation par apprentissage. Certificat n° QUA006747, délivré par l'ICPF. Titre RNCP39063 enregistré au RNCP par le ministère du Travail.</p>
+        </div>
+        <div style="display:flex;gap:1.4rem;flex-wrap:wrap"><button type="button" data-modal="ml">Mentions légales</button><button type="button" data-modal="pc">Confidentialité</button><span>© 2026 Talentys</span></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="ml" hidden role="dialog" aria-modal="true" aria-labelledby="ml-t"><div class="box">
+  <div class="mt"><h3 id="ml-t">Mentions légales</h3><button class="x" type="button" data-close aria-label="Fermer"></button></div>
+  <p class="maj">Dernière mise à jour : 5 novembre 2026</p>
+  <p>Les présentes mentions légales sont établies en application de l'article 1-1 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN), dans sa rédaction issue de la loi n° 2024-449 du 21 mai 2024 (dite « SREN »), et de l'article R. 123-237 du Code de commerce. Elles s'appliquent au site talentys.info (ci-après « le Site »).</p>
+
+  <h4>1. Éditeur du Site</h4>
+  <div class="tw"><table>
+    <tr><th>Dénomination sociale</th><td>TALENTYS</td></tr>
+    <tr><th>Nom d'usage</th><td>Talentys École des Commerciaux</td></tr>
+    <tr><th>Forme juridique</th><td>Société par actions simplifiée (SAS)</td></tr>
+    <tr><th>Capital social</th><td>10 000 €</td></tr>
+    <tr><th>Siège social</th><td>4 rue Gambetta, 60100 Creil</td></tr>
+    <tr><th>Immatriculation</th><td>RCS Compiègne 980 416 549</td></tr>
+    <tr><th>SIRET du siège</th><td>980 416 549 00023</td></tr>
+    <tr><th>N° de TVA intracommunautaire</th><td>FR42 980 416 549</td></tr>
+    <tr><th>Code APE</th><td>85.59A – Formation continue d'adultes</td></tr>
+    <tr><th>Représentant légal</th><td>M. David Jami, Président</td></tr>
+    <tr><th>Téléphone</th><td>01 89 62 93 26</td></tr>
+    <tr><th>Courrier électronique</th><td>direction@talentys.info</td></tr>
+  </table></div>
+  <p>Lieu de formation et d'accueil du public : 6 rue Sadi Carnot, 93170 Bagnolet.</p>
+
+  <h4>2. Directeur de la publication</h4>
+  <p>Le directeur de la publication est M. David Jami, Président et représentant légal de TALENTYS, au sens de l'article 1-1 de la LCEN et de l'article 93-2 de la loi n° 82-652 du 29 juillet 1982 sur la communication audiovisuelle. Contact : direction@talentys.info.</p>
+
+  <h4>3. Organisme de formation et centre de formation d'apprentis</h4>
+  <p>TALENTYS est un prestataire d'actions concourant au développement des compétences, exerçant une activité de centre de formation d'apprentis (CFA).</p>
+  <ul>
+    <li><strong>Déclaration d'activité</strong> : enregistrée sous le numéro 32600461360 auprès du préfet de région Hauts-de-France (numéro attribué le 3 juin 2025 à la société, alors dénommée MANABU). Cet enregistrement ne vaut pas agrément de l'État (article L. 6352-12 du Code du travail).</li>
+    <li><strong>Certification qualité</strong> : TALENTYS est titulaire de la certification qualité Qualiopi prévue à l'article L. 6316-1 du Code du travail, au titre des catégories « actions de formation » (article L. 6313-1, 1°) et « actions de formation par apprentissage » (article L. 6313-1, 4°). Certificat n° QUA006747, délivré par l'ICPF (organisme certificateur accrédité par le COFRAC sous le n° 5-0616), valable du 28 octobre 2025 au 4 février 2027 ; première émission le 5 février 2024. Le certificat, émis sous l'ancienne dénomination sociale MANABU et l'enseigne « Poly Langues », peut être vérifié sur <a href="https://www.certif-icpf.org" target="_blank" rel="noopener">certif-icpf.org</a>.</li>
+    <li><strong>Certification préparée</strong> : titre professionnel « Négociateur technico-commercial » de niveau 5, enregistré au Répertoire national des certifications professionnelles sous le n° RNCP39063. Le certificateur est le ministère chargé de l'emploi. Le titre est délivré par ce ministère après réussite à la session d'examen ; TALENTYS prépare les candidats à cette certification sans la délivrer elle-même (<a href="https://www.francecompetences.fr/recherche/rncp/39063/" target="_blank" rel="noopener">fiche France Compétences</a>).</li>
+    <li><strong>Indicateurs de résultats</strong> : conformément à l'article L. 6111-8 du Code du travail, TALENTYS publie chaque année, dès que ses effectifs sont suffisants, les taux d'obtention du titre, de poursuite d'études, d'interruption en cours de formation, d'insertion professionnelle, de rupture des contrats d'apprentissage et sa valeur ajoutée. La première promotion d'apprentis de TALENTYS est en cours de formation : aucun taux ne peut encore être calculé. Ces indicateurs seront publiés sur le Site dès qu'ils seront disponibles. Le taux d'insertion de 84 % affiché sur le Site est un taux national, publié par France Compétences, et ne constitue pas un résultat propre à TALENTYS.</li>
+    <li><strong>Accessibilité aux personnes en situation de handicap</strong> : la formation est accessible aux personnes en situation de handicap. Le référent handicap est M. David Jami, joignable au 01 89 62 93 26 ou à direction@talentys.info, pour étudier avec chaque candidat les adaptations nécessaires à son accueil et à sa formation.</li>
+  </ul>
+
+  <h4>4. Hébergement</h4>
+  <p>Conformément à l'article 1-1 de la LCEN, le Site est hébergé par :</p>
+  <div class="tw"><table>
+    <tr><th>Raison sociale</th><td>Cloudflare, Inc.</td></tr>
+    <tr><th>Adresse</th><td>101 Townsend Street, San Francisco, CA 94107, États-Unis</td></tr>
+    <tr><th>Téléphone</th><td>+1 650 319 8930</td></tr>
+    <tr><th>Localisation des serveurs</th><td>Réseau mondial de centres de données, dont l'Union européenne</td></tr>
+  </table></div>
+  <p>Les candidatures transmises par le formulaire sont reçues et conservées dans la messagerie électronique de TALENTYS, fournie par Google Ireland Limited (service Gmail), Gordon House, Barrow Street, Dublin 4, Irlande.</p>
+
+  <h4>5. Propriété intellectuelle</h4>
+  <p>Les contenus originaux du Site (textes, charte graphique, mise en page, structure et code source) sont protégés par le droit d'auteur, en application des articles L. 111-1 et suivants du Code de la propriété intellectuelle. Ils sont la propriété de TALENTYS ou utilisés avec l'autorisation de leurs titulaires.</p>
+  <p>Sauf dans les cas prévus par l'article L. 122-5 du même code (notamment la copie privée et la courte citation avec indication de la source), toute reproduction, représentation, adaptation ou diffusion de ces contenus, totale ou partielle, sans l'autorisation écrite et préalable de TALENTYS, est interdite. Elle constitue une contrefaçon sanctionnée par les articles L. 335-2 et suivants du même code.</p>
+  <p>La dénomination sociale « TALENTYS » et le nom d'usage « Talentys École des Commerciaux » ne peuvent être utilisés par un tiers d'une manière susceptible de créer une confusion avec TALENTYS. Un tel usage engage la responsabilité de son auteur au titre de la concurrence déloyale (article 1240 du Code civil).</p>
+  <p>Les logos Qualiopi et « République française » appartiennent à l'État. Ils sont reproduits conformément à la charte d'usage de la marque de certification qualité.</p>
+  <p>Crédits visuels : les visuels du Site ont été créés par TALENTYS à l'aide d'un outil d'intelligence artificielle (Claude, Anthropic). Ils ne représentent pas de personnes réelles.</p>
+
+  <h4>6 et 7. Données personnelles et cookies</h4>
+  <p>Voir la rubrique <button type="button" data-modal="pc" style="text-decoration:underline;font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer">Confidentialité</button>.</p>
+
+  <h4>8. Responsabilité</h4>
+  <p>Les informations publiées sur le Site sont fournies à titre indicatif et n'ont pas de valeur contractuelle. TALENTYS s'efforce d'en assurer l'exactitude et la mise à jour, sans pouvoir garantir leur exhaustivité. Les dates de rentrée et de job dating, les conditions d'accès et les rémunérations sont susceptibles d'évoluer ; seuls le contrat d'apprentissage et la convention de formation font foi.</p>
+  <p>TALENTYS ne peut être tenue responsable d'une interruption du Site, d'un dysfonctionnement technique ou d'une intrusion malveillante indépendante de sa volonté, dans les limites autorisées par la loi.</p>
+
+  <h4>9. Liens hypertextes</h4>
+  <p>Le Site contient des liens vers des services tiers (Instagram, Facebook, WhatsApp). TALENTYS n'exerce aucun contrôle sur ces services et décline toute responsabilité quant à leur contenu et à leurs pratiques en matière de données personnelles.</p>
+  <p>La création d'un lien vers le Site est libre, à condition de ne pas porter atteinte à l'image de TALENTYS et de ne pas laisser croire à un partenariat inexistant. TALENTYS peut demander la suppression de tout lien.</p>
+
+  <h4>10. Signalement de contenus illicites</h4>
+  <p>Tout contenu manifestement illicite présent sur le Site peut être signalé à direction@talentys.info, en précisant la date, l'identité de l'auteur du signalement, l'adresse de la page, la description du contenu et les motifs du retrait demandé. Tout signalement abusif visant à obtenir le retrait d'un contenu licite peut engager la responsabilité civile et pénale de son auteur.</p>
+
+  <h4>11. Droit applicable et litiges</h4>
+  <p>Les présentes mentions légales sont soumises au droit français. En cas de litige, les parties rechercheront une solution amiable avant toute action judiciaire. À défaut, le litige sera porté devant les juridictions françaises compétentes selon les règles de droit commun.</p>
+  <p>TALENTYS peut modifier les présentes mentions à tout moment ; la version en vigueur est celle publiée sur le Site à la date de consultation.</p>
+</div></div>
+
+<div class="modal" id="pc" hidden role="dialog" aria-modal="true" aria-labelledby="pc-t"><div class="box">
+  <div class="mt"><h3 id="pc-t">Confidentialité</h3><button class="x" type="button" data-close aria-label="Fermer"></button></div>
+  <p class="maj">Dernière mise à jour : 5 novembre 2026</p>
+
+  <h4>6. Protection des données personnelles</h4>
+  <p>Les informations ci-dessous sont fournies en application des articles 13 et 14 du règlement (UE) 2016/679 du 27 avril 2016 (RGPD) et de la loi n° 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés.</p>
+
+  <h5>6.1 Responsable du traitement</h5>
+  <p>TALENTYS SAS, 4 rue Gambetta, 60100 Creil, représentée par M. David Jami. Contact pour toute question relative à vos données : direction@talentys.info. TALENTYS n'a pas désigné de délégué à la protection des données, cette désignation n'étant pas obligatoire pour son activité.</p>
+
+  <h5>6.2 Données traitées</h5>
+  <p>Prénom, nom, numéro de téléphone, adresse électronique, âge, niveau d'études et, si vous le transmettez, votre CV, ainsi que le contenu de nos échanges (courrier électronique, téléphone, WhatsApp). Lors de votre navigation, l'hébergeur du Site traite également des données techniques de connexion (adresse IP, type de navigateur, date et heure de connexion) afin d'en assurer la sécurité. Les champs signalés comme obligatoires dans le formulaire sont nécessaires au traitement de votre candidature ; sans eux, elle ne peut pas être étudiée. Nous vous invitons à ne pas faire figurer dans votre CV de données sensibles au sens de l'article 9 du RGPD (santé, opinions, religion, etc.).</p>
+
+  <h5>6.3 Finalités, bases légales et durées de conservation</h5>
+  <div class="tw"><table>
+    <tr><th>Finalité</th><th>Base légale (art. 6 RGPD)</th><th>Durée de conservation</th></tr>
+    <tr><td>Étudier votre candidature, vous inscrire au job dating et vous recontacter</td><td>Mesures précontractuelles prises à votre demande (art. 6.1 b)</td><td>2 ans à compter du dernier contact, puis suppression</td></tr>
+    <tr><td>Transmettre votre profil et votre CV aux entreprises partenaires en vue d'un contrat d'apprentissage</td><td>Votre consentement, recueilli spécifiquement (art. 6.1 a)</td><td>Jusqu'au retrait de votre consentement, et au plus 2 ans après le dernier contact</td></tr>
+    <tr><td>Gérer votre formation et votre contrat d'apprentissage (dossier administratif, OPCO, examens)</td><td>Obligations légales du CFA et exécution de la convention de formation (art. 6.1 c et b)</td><td>Durée de la formation, puis archivage pendant les durées légales de conservation et de contrôle</td></tr>
+    <tr><td>Établir les indicateurs de résultats et répondre aux contrôles (Qualiopi, France Compétences, administration)</td><td>Obligation légale (art. 6.1 c)</td><td>Durées fixées par les textes applicables</td></tr>
+    <tr><td>Assurer la sécurité du Site et le protéger contre les attaques et les robots</td><td>Intérêt légitime de TALENTYS à sécuriser le Site (art. 6.1 f)</td><td>Durée strictement nécessaire à cette finalité, fixée par l'hébergeur</td></tr>
+  </table></div>
+
+  <h5>6.4 Destinataires</h5>
+  <p>Vos données sont destinées au personnel habilité de TALENTYS. Elles peuvent être communiquées, dans la limite de ce qui est nécessaire : aux entreprises partenaires, uniquement avec votre accord ; à l'OPCO, au ministère chargé de l'emploi et aux organismes de contrôle, lorsque la loi l'impose ; à nos prestataires techniques d'hébergement et de messagerie, dans la limite de leurs conditions de service et de leurs engagements en matière de protection des données. Vos données ne sont jamais vendues ni louées.</p>
+
+  <h5>6.5 Transferts hors de l'Union européenne</h5>
+  <p>Le Site est hébergé par Cloudflare, Inc., société établie aux États-Unis. TALENTYS utilise également la messagerie Gmail (Google Ireland Limited) et, pour les échanges avec les candidats qui le choisissent, WhatsApp (Meta Platforms Ireland Limited). Ces services peuvent entraîner un transfert de données vers les États-Unis, notamment vers Cloudflare, Inc. et vers les sociétés mères Google LLC et Meta Platforms, Inc. Ces transferts sont encadrés par la décision d'adéquation de la Commission européenne du 10 juillet 2023 relative au cadre de protection des données UE–États-Unis et, à défaut, par les clauses contractuelles types adoptées par la Commission européenne (art. 45 et 46 RGPD).</p>
+
+  <h5>6.6 Sécurité</h5>
+  <p>TALENTYS met en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données contre la perte, l'accès non autorisé ou la divulgation (art. 32 RGPD). Aucune décision vous concernant n'est prise sur le seul fondement d'un traitement automatisé (art. 22 RGPD).</p>
+
+  <h5>6.7 Vos droits</h5>
+  <p>Vous disposez des droits d'accès, de rectification, d'effacement, de limitation, de portabilité et d'opposition (articles 15 à 21 du RGPD). Vous pouvez retirer votre consentement à tout moment, sans remettre en cause la licéité des traitements effectués avant ce retrait. Vous pouvez enfin définir des directives sur le sort de vos données après votre décès (article 85 de la loi du 6 janvier 1978). Pour exercer ces droits, écrivez à direction@talentys.info ou par courrier au siège social. Un justificatif d'identité pourra vous être demandé en cas de doute raisonnable. Une réponse vous sera apportée dans un délai d'un mois, prolongeable de deux mois en cas de demande complexe (art. 12 RGPD).</p>
+
+  <h5>6.8 Réclamation</h5>
+  <p>Si vous estimez, après nous avoir contactés, que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la Commission nationale de l'informatique et des libertés (CNIL), 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07, ou en ligne sur <a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>.</p>
+
+  <h5>6.9 Candidats mineurs</h5>
+  <p>Les candidatures sont ouvertes à partir de 16 ans. Pour un candidat âgé de 16 ou 17 ans, TALENTYS contacte l'un de ses représentants légaux avant toute démarche, et le contrat d'apprentissage est signé par l'apprenti et par ce représentant légal. Les représentants légaux peuvent exercer les droits décrits ci-dessus au nom du mineur.</p>
+
+  <h4>7. Cookies et autres traceurs</h4>
+  <p>TALENTYS n'a pas mis en place de traceurs de mesure d'audience, de publicité ou de réseaux sociaux sur le Site. Les seuls traceurs susceptibles d'être déposés sont ceux strictement nécessaires à son fonctionnement et à sa sécurité, notamment les cookies de protection contre les robots et les attaques déposés par son hébergeur Cloudflare. Ils sont exemptés de consentement en application de l'article 82 de la loi du 6 janvier 1978. Vous pouvez les bloquer dans les réglages de votre navigateur, ce qui peut toutefois empêcher le bon fonctionnement du Site.</p>
+  <p>Si des traceurs non essentiels (mesure d'audience non exemptée, publicité, réseaux sociaux, contenus tiers intégrés) étaient ajoutés, ils ne seraient déposés qu'après votre consentement libre, spécifique, éclairé et univoque, recueilli par un bandeau conforme aux lignes directrices et à la recommandation de la CNIL (délibérations n° 2020-091 et n° 2020-092 du 17 septembre 2020). Refuser serait aussi simple qu'accepter, et vous pourriez retirer votre consentement à tout moment. La durée de vie de ces traceurs serait limitée à 13 mois.</p>
+</div></div>
+
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+
+<script>
+/* ===== Réglages : à la mise en ligne, coller ici l'URL du script Google ===== */
+window.TALENTYS_ENDPOINT = "https://script.google.com/macros/s/AKfycbxalq9lep3hIKFv0G1UAL-E-sw_U_rU6PxjSLH-iVEf0AI3Vij1c60zJHExMTNo-rBD/exec";
+</script>
+
+<script>
+(function(){
+"use strict";
+const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const $ = s => document.querySelector(s);
+const MOIS = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+const MOIS_C = ["jan","fév","mars","avr","mai","juin","juil","août","sept","oct","nov","déc"];
+
+/* ---------- Dates des job datings ---------- */
+function fridays(n){
+  const out=[]; const now=new Date(); const d=new Date(now); d.setHours(0,0,0,0);
+  let add=(5-d.getDay()+7)%7;
+  if(add===0 && now.getHours()>=14) add=7;
+  d.setDate(d.getDate()+add);
+  const FERIES=["1-1","1-5","8-5","14-7","15-8","1-11","11-11","25-12"];
+  while(out.length<n){ if(!FERIES.includes(d.getDate()+"-"+(d.getMonth()+1))) out.push(new Date(d)); d.setDate(d.getDate()+7); }
+  return out;
+}
+const fr=fridays(5);
+const today=new Date(); today.setHours(0,0,0,0);
+$("#heroDate").textContent=(fr[0].getTime()===today.getTime()?"Aujourd'hui, ":"Vendredi ")+fr[0].getDate()+" "+MOIS[fr[0].getMonth()];
+const cards=$("#cards");
+fr.forEach((d,i)=>{
+  const c=document.createElement("div"); c.className="card"+(i===0?" next":"");
+  c.innerHTML=(i===0?'<span class="tagn">Prochain</span>':"")+'<span class="d">'+String(d.getDate()).padStart(2,"0")+'</span><span class="m">Ven. '+MOIS_C[d.getMonth()]+'</span><span class="h">10 h – 14 h · Bagnolet</span>';
+  cards.appendChild(c);
+});
+
+
+/* ---------- Titre mot par mot ---------- */
+const h1w=$("#h1w");
+"Deviens le commercial que toutes les entreprises <em>recherchent</em>".split(" ").forEach((w,i)=>{
+  const s=document.createElement("span"); s.className="word"; s.style.transitionDelay=(180+i*90)+"ms";
+  s.innerHTML=w; h1w.appendChild(s); h1w.appendChild(document.createTextNode(" "));
+});
+
+/* ---------- Voile ---------- */
+let progress=0, target=.7, ready=false, lifted=false;
+const vfill=$("#vfill"), vmeter=$("#vmeter"), veil=$("#veil");
+function veilTick(){
+  progress += (target-progress)*(ready?.18:.05);
+  vfill.setAttribute("y", String(115-115*progress));
+  vmeter.style.transform="scaleX("+progress+")";
+  if(ready && progress>.985 && !lifted){ lift(); return; }
+  if(!lifted) requestAnimationFrame(veilTick);
+}
+function lift(){
+  if(lifted) return; lifted=true;
+  veil.classList.add("out"); document.body.classList.add("go");
+  window.dispatchEvent(new Event("talentys:go"));
+  setTimeout(()=>{veil.remove();},700);
+}
+window.talentysReady=function(){ready=true;target=1;};
+requestAnimationFrame(veilTick);
+setTimeout(()=>{window.talentysReady();},1400);   /* jamais plus d'1,4 s */
+setTimeout(lift,2600);
+
+/* ---------- Menu mobile ---------- */
+const burger=$("#burger");
+burger.addEventListener("click",()=>{
+  const sh=document.createElement("div"); sh.className="sheet"; sh.setAttribute("role","dialog"); sh.setAttribute("aria-modal","true"); sh.setAttribute("aria-label","Menu");
+  sh.innerHTML='<div class="sheet-top"><span class="logo"><b style="font:700 1.25rem var(--f-mark)">Talentys</b></span><button class="x" aria-label="Fermer le menu"></button></div><nav aria-label="Menu mobile">'+
+   [["#metier","La formation"],["#parcours","Ton parcours"],["#calendrier","Job dating"],["#directeur","L'école"],["#postuler","Postuler"]].map((l,i)=>'<a href="'+l[0]+'" style="transition-delay:'+(120+i*55)+'ms">'+l[1]+'</a>').join("")+'</nav>';
+  document.body.appendChild(sh); document.documentElement.style.overflow="hidden"; burger.setAttribute("aria-expanded","true");
+  requestAnimationFrame(()=>requestAnimationFrame(()=>sh.classList.add("open")));
+  const x=sh.querySelector(".x"); x.focus();
+  function close(){sh.classList.remove("open");document.documentElement.style.overflow="";burger.setAttribute("aria-expanded","false");setTimeout(()=>sh.remove(),250);document.removeEventListener("keydown",esc);burger.focus();}
+  function esc(e){if(e.key==="Escape")close();}
+  x.addEventListener("click",close); sh.querySelectorAll("nav a").forEach(a=>a.addEventListener("click",close));
+  document.addEventListener("keydown",esc);
+});
+
+/* ---------- Pile collante ---------- */
+const layers=[...document.querySelectorAll(".layer")];
+function sizeLayers(){layers.forEach(l=>{if(l.classList.contains('last'))return;l.style.top=Math.min(0,innerHeight-l.offsetHeight)+"px";});}
+function stack(){
+  for(let i=0;i<layers.length-1;i++){
+    const next=layers[i+1].getBoundingClientRect().top;
+    const p=Math.max(0,Math.min(1,1-next/innerHeight));
+    const l=layers[i];
+    l.style.transform=p>0?"scale("+(1-.1*p)+")":"";
+    const sh=l.querySelector(".shade"); if(sh) sh.style.opacity=(.55*p).toFixed(3);
+  }
+}
+if(!RM){addEventListener("scroll",()=>requestAnimationFrame(stack),{passive:true});}
+addEventListener("resize",()=>{sizeLayers();stack();});
+sizeLayers(); setTimeout(sizeLayers,500);
+
+/* ---------- Lignes de niveau (marching squares) ---------- */
+function hash(x,y){const s=Math.sin(x*127.1+y*311.7)*43758.5453;return s-Math.floor(s);}
+function vnoise(x,y){const xi=Math.floor(x),yi=Math.floor(y),xf=x-xi,yf=y-yi;const u=xf*xf*(3-2*xf),v=yf*yf*(3-2*yf);
+  const a=hash(xi,yi),b=hash(xi+1,yi),c=hash(xi,yi+1),d=hash(xi+1,yi+1);return a+(b-a)*u+(c-a)*v+(a-b-c+d)*u*v;}
+function contourField(canvas,color,opts){
+  const ctx=canvas.getContext("2d"); let W=0,H=0,dpr=Math.min(devicePixelRatio||1,1.5),run=true,t0=performance.now();
+  const cell=opts.cell||22, levels=opts.levels||[.3,.38,.46,.54,.62,.7];
+  function size(){W=canvas.clientWidth;H=canvas.clientHeight;canvas.width=W*dpr;canvas.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);}
+  function draw(t){
+    ctx.clearRect(0,0,W,H); ctx.strokeStyle=color; ctx.lineWidth=1;
+    const cols=Math.ceil(W/cell)+1, rows=Math.ceil(H/cell)+1, f=new Float32Array(cols*rows), sc=opts.scale||.006, tt=t*.00005;
+    for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){const x=i*cell,y=j*cell;f[j*cols+i]=.6*vnoise(x*sc+tt,y*sc-tt*.6)+.4*vnoise(x*sc*2.1-tt,y*sc*2.1+3);}
+    ctx.beginPath();
+    for(const L of levels){
+      for(let j=0;j<rows-1;j++)for(let i=0;i<cols-1;i++){
+        const a=f[j*cols+i],b=f[j*cols+i+1],c=f[(j+1)*cols+i+1],d=f[(j+1)*cols+i];
+        const k=(a>L?8:0)|(b>L?4:0)|(c>L?2:0)|(d>L?1:0); if(k===0||k===15) continue;
+        const x=i*cell,y=j*cell,lp=(p,q)=>(L-p)/(q-p);
+        const T=[x+cell*lp(a,b),y],R=[x+cell,y+cell*lp(b,c)],B=[x+cell*lp(d,c),y+cell],Lf=[x,y+cell*lp(a,d)];
+        const seg=(p,q)=>{ctx.moveTo(p[0],p[1]);ctx.lineTo(q[0],q[1]);};
+        switch(k){case 1:case 14:seg(Lf,B);break;case 2:case 13:seg(B,R);break;case 3:case 12:seg(Lf,R);break;case 4:case 11:seg(T,R);break;
+          case 5:seg(Lf,T);seg(B,R);break;case 6:case 9:seg(T,B);break;case 7:case 8:seg(Lf,T);break;case 10:seg(T,R);seg(Lf,B);break;}
+      }
+    }
+    ctx.stroke();
+  }
+  let last=0;
+  function loop(t){ if(run && t-last>66){draw(t-t0);last=t;} requestAnimationFrame(loop); }
+  size(); draw(0);
+  addEventListener("resize",()=>{size();draw(performance.now()-t0);});
+  if(!RM){ new IntersectionObserver(e=>{run=e[0].isIntersecting;}).observe(canvas); requestAnimationFrame(loop); }
+}
+contourField($("#contours"),"rgba(11,26,51,.10)",{scale:.0045});
+contourField($("#contours2"),"rgba(11,26,51,.09)",{scale:.005});
+contourField($("#contours3"),"rgba(255,255,255,1)",{scale:.005});
+
+/* ---------- Damier qui se défait ---------- */
+const cq=$("#cheq"), cqx=cq.getContext("2d"), metier=$("#metier");
+function cheq(){
+  const W=cq.clientWidth,H=cq.clientHeight,d=Math.min(devicePixelRatio||1,2);
+  if(cq.width!==W*d){cq.width=W*d;cq.height=H*d;}
+  cqx.setTransform(d,0,0,d,0,0); cqx.clearRect(0,0,W,H);
+  const r=metier.getBoundingClientRect(); const p=Math.max(0,Math.min(1,(innerHeight-r.top)/(innerHeight*1.1)));
+  const s=24, rows=Math.ceil(H/s), cols=Math.ceil(W/s); cqx.fillStyle="#F5F7F9";
+  for(let j=0;j<rows;j++){
+    const depth=j/rows;
+    for(let i=0;i<cols;i++){
+      const solid=depth<.18-p*.25;
+      const chk=((i+j)%2===0)&& (depth+hash(i,j)*.25) < (.75-p*.95);
+      if(solid||chk) cqx.fillRect(i*s,j*s,s,s);
+    }
+  }
+}
+addEventListener("scroll",()=>requestAnimationFrame(cheq),{passive:true}); addEventListener("resize",cheq); cheq();
+
+/* ---------- Trame de points + réticule ---------- */
+const dc=$("#dots"), dx=dc.getContext("2d"); let mouse=null;
+function dots(){
+  const W=dc.clientWidth,H=dc.clientHeight,d=Math.min(devicePixelRatio||1,2);
+  if(dc.width!==Math.round(W*d)||dc.height!==Math.round(H*d)){dc.width=Math.round(W*d);dc.height=Math.round(H*d);}
+  dx.setTransform(d,0,0,d,0,0); dx.clearRect(0,0,W,H);
+  const g=14; const cx=W*.68, cy=H*.5;
+  let mi=-1,mj=-1; if(mouse){mi=Math.round(mouse.x/g);mj=Math.round(mouse.y/g);}
+  for(let j=0;j*g<H+g;j++)for(let i=0;i*g<W+g;i++){
+    const x=i*g,y=j*g; const n=vnoise(x*.007,y*.007);
+    const rad=Math.hypot((x-cx)/W,(y-cy)/H); const v=n*1.2-rad*.9;
+    if(v<.18) continue;
+    const onX=(j===mj), onY=(i===mi);
+    if(onX||onY){ const near=Math.abs(i-mi)<18&&Math.abs(j-mj)<18; if(near){dx.fillStyle=(onX&&onY)?"#FF6414":"rgba(255,100,20,.75)"; dx.fillRect(x-2,y-2,4,4); continue;} }
+    dx.fillStyle="rgba(147,161,190,"+Math.min(.45,(v-.18)*1.3).toFixed(3)+")";
+    dx.beginPath(); dx.arc(x,y,Math.min(2.2,.6+(v-.18)*4),0,6.283); dx.fill();
+  }
+}
+dots(); addEventListener("resize",dots);
+if(matchMedia("(hover:hover)").matches && !RM){
+  let pend=false;
+  metier.addEventListener("pointermove",e=>{const r=dc.getBoundingClientRect();mouse={x:e.clientX-r.left,y:e.clientY-r.top};if(!pend){pend=true;requestAnimationFrame(()=>{pend=false;dots();});}});
+  metier.addEventListener("pointerleave",()=>{mouse=null;dots();});
+}
+
+/* ---------- Le tour du cycle de vente ---------- */
+const STEPS=["Préparer","Prospecter","Découvrir les besoins","Proposer","Négocier","Conclure","Suivre et fidéliser"];
+const FR=[0,.13,.27,.41,.57,.73,.87];
+const LAB=[[26,7,'start'],[0,-26,'middle'],[-14,40,'end'],[-26,7,'end'],[-26,7,'end'],[0,44,'middle'],[26,7,'start']];
+const lap=$("#lap"), glow=$("#lapGlow"), tp=$("#tp"), head=$("#head"), marks=$("#marks");
+const LEN=tp.getTotalLength();
+const mkEls=STEPS.map((s,i)=>{
+  const p=tp.getPointAtLength(FR[i]*LEN);
+  const g=document.createElementNS("http://www.w3.org/2000/svg","g"); g.setAttribute("class","mk");
+  const L=LAB[i];
+  g.innerHTML='<circle class="o" cx="'+p.x+'" cy="'+p.y+'" r="15"/><text class="n" x="'+p.x+'" y="'+p.y+'">'+(i+1)+'</text><text x="'+(p.x+L[0])+'" y="'+(p.y+L[1])+'" text-anchor="'+L[2]+'">'+s+'</text>';
+  marks.appendChild(g); return g;
+});
+[lap,glow].forEach(el=>{el.style.strokeDasharray=LEN;el.style.strokeDashoffset=LEN;});
+let lapDone=false;
+function runLap(){
+  if(lapDone) return; lapDone=true;
+  if(RM){[lap,glow].forEach(el=>el.style.strokeDashoffset=0);mkEls.forEach(m=>m.classList.add("on"));$("#lapState").textContent="Le suivi relance le cycle";return;}
+  const T=6000, t0=performance.now(); head.setAttribute("opacity","1");
+  (function f(now){
+    const t=Math.min(1,(now-t0)/T);
+    const s=Math.min(1,t + .012*Math.sin(2*Math.PI*7*t));
+    const e=s<1? s : 1;
+    const off=LEN*(1-e); lap.style.strokeDashoffset=off; glow.style.strokeDashoffset=off;
+    const p=tp.getPointAtLength(e*LEN); head.setAttribute("cx",p.x); head.setAttribute("cy",p.y);
+    mkEls.forEach((m,i)=>{ if(e>=FR[i]-.001) m.classList.add("on"); });
+    if(t<1) requestAnimationFrame(f); else { head.setAttribute("opacity","0"); glow.style.opacity=".12"; $("#lapState").textContent="Le suivi relance le cycle"; }
+  })(t0);
+}
+new IntersectionObserver((e,o)=>{ if(e[0].isIntersecting){ runLap(); o.disconnect(); } },{threshold:.35}).observe($("#track"));
+
+/* ---------- Frise ---------- */
+const ILL={
+ form:'<rect x="560" y="210" width="300" height="560" rx="34" fill="none" stroke="#EEF2F8" stroke-width="10"/><rect x="610" y="300" width="200" height="34" fill="#26335A"/><rect x="610" y="370" width="200" height="34" fill="#26335A"/><rect x="610" y="440" width="200" height="34" fill="#26335A"/><rect x="610" y="540" width="200" height="60" fill="#FF6414"/><path d="M890 260 L960 230 M900 330 L990 330 M890 400 L960 430" stroke="#FF6414" stroke-width="10" stroke-linecap="round"/><text x="710" y="690" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="800" font-size="64" fill="#EEF2F8">2 MIN</text>',
+ call:'<path d="M520 300 c0 -40 30 -70 70 -70 h60 l40 120 -60 40 c40 90 110 160 200 200 l40 -60 120 40 v60 c0 40 -30 70 -70 70 C700 700 520 520 520 300Z" fill="none" stroke="#EEF2F8" stroke-width="12" stroke-linejoin="round"/><path d="M860 230 a120 120 0 0 1 120 120 M860 290 a60 60 0 0 1 60 60" fill="none" stroke="#FF6414" stroke-width="12" stroke-linecap="round"/><text x="1080" y="620" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="800" font-size="120" fill="#FF6414">24 H</text>',
+ date:'<rect x="440" y="230" width="540" height="520" fill="none" stroke="#EEF2F8" stroke-width="12"/><rect x="440" y="230" width="540" height="110" fill="#26335A"/><path d="M540 190v90M880 190v90" stroke="#EEF2F8" stroke-width="14" stroke-linecap="round"/>'+[0,1,2,3,4].map(i=>'<rect x="'+(480+i*98)+'" y="420" width="78" height="78" fill="'+(i===4?'#FF6414':'#26335A')+'"/>').join("")+'<text x="710" y="660" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="800" font-size="80" fill="#EEF2F8">VEN · 10H–14H</text>',
+ sign:'<path d="M470 210 h380 l90 90 v470 h-470z" fill="none" stroke="#EEF2F8" stroke-width="12" stroke-linejoin="round"/><path d="M530 340h300M530 410h340M530 480h260" stroke="#26335A" stroke-width="24"/><path d="M540 650 c40 -60 70 -60 90 0 s60 40 90 -20 40 -30 70 10" fill="none" stroke="#FF6414" stroke-width="10" stroke-linecap="round"/><path d="M930 520 l120 -120 40 40 -120 120 -60 20z" fill="#FF6414"/>',
+ week:[0,1,2,3,4].map(i=>'<rect x="'+(330+i*160)+'" y="'+(i<4?300:300)+'" width="130" height="420" fill="'+(i<4?'#26335A':'#FF6414')+'"/><text x="'+(395+i*160)+'" y="270" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="44" fill="#93A1BE">J'+(i+1)+'</text>').join("")+'<text x="700" y="830" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="800" font-size="68" fill="#EEF2F8">4 JOURS TERRAIN · 1 JOUR ÉCOLE</text>',
+ jury:'<rect x="360" y="460" width="700" height="40" fill="#EEF2F8"/><path d="M400 500v200M1020 500v200" stroke="#EEF2F8" stroke-width="12"/>'+[0,1,2].map(i=>'<circle cx="'+(530+i*180)+'" cy="330" r="56" fill="none" stroke="#EEF2F8" stroke-width="12"/><path d="M'+(460+i*180)+' 450 c0 -60 30 -60 70 -60 s70 0 70 60" fill="none" stroke="#EEF2F8" stroke-width="12"/>').join("")+'<text x="710" y="800" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="800" font-size="84" fill="#FF6414">8 H 30 · JURY</text>',
+ grad:'<polygon points="710,170 940,302 940,566 710,698 480,566 480,302" fill="none" stroke="#EEF2F8" stroke-width="14"/><polygon points="710,250 870,342 870,526 710,618 550,526 550,342" fill="#FF6414"/><text x="710" y="470" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="800" font-size="120" fill="#0A1328">BAC+2</text><text x="710" y="830" text-anchor="middle" font-family="Barlow Condensed,Arial Narrow,sans-serif" font-weight="700" font-size="56" fill="#93A1BE">TITRE RNCP39063</text>'
+};
+const STEPS_T=[
+ ["form","Tu postules en 2 minutes","Prénom, nom, téléphone, email. Ton CV si tu l'as. C'est tout.","Étape 1"],
+ ["call","On t'appelle sous 24 h","Un premier échange au téléphone pour faire connaissance, répondre à tes questions et réserver ta place au job dating.","Étape 2"],
+ ["date","Tu viens au job dating","Sur inscription, un vendredi de 10 h à 14 h à Bagnolet. Tu rencontres l'équipe et des entreprises qui recrutent.","Étape 3"],
+ ["sign","Tu signes ton contrat","Avec une entreprise partenaire. On s'occupe du dossier avec elle.","Étape 4"],
+ ["week","Tu vends, tu apprends","14 mois de contrat : 4 jours sur le terrain, 1 jour à l'école. Tu touches ton salaire, et tes ventes sont récompensées.","Étape 5"],
+ ["jury","Tu passes l'examen","8 h 30 d'épreuves devant un jury de professionnels : mises en situation, négociation, dossier.","Étape 6"],
+ ["grad","Tu es diplômé Bac+2","Technico-commercial, chargé d'affaires, commercial B2B, business developer : le terrain t'attend.","Étape 7"]
+];
+const rows=$("#rows");
+STEPS_T.forEach((s,i)=>{
+  const r=document.createElement("article"); r.className="row-step";
+  const n=String(i+1).padStart(2,"0");
+  r.innerHTML='<div class="plate-ill"><svg viewBox="0 0 1420 1016" aria-hidden="true"><rect width="1420" height="1016" fill="#111D3A"/><path d="M0 860H1420" stroke="#1E2A4C" stroke-width="2" stroke-dasharray="8 12"/>'+ILL[s[0]]+'</svg></div>'+
+   '<div class="step-txt"><span class="tag">'+s[3]+'</span><div class="num pre" aria-hidden="true">'+n.split("").map((c,k)=>'<span style="transition-delay:'+(k*90)+'ms">'+c+'</span>').join("")+'</div><h3>'+s[1]+'</h3><p>'+s[2]+'</p></div>';
+  rows.appendChild(r);
+});
+const rowEls=[...rows.querySelectorAll(".row-step")];
+const ro=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.querySelector(".num").classList.remove("pre"); e.target.classList.add("lit"); setTimeout(()=>e.target.classList.remove("lit"),2200);} }),{threshold:.5});
+rowEls.forEach(r=>ro.observe(r));
+if(RM) rowEls.forEach(r=>r.querySelector(".num").classList.remove("pre"));
+const thread=$("#thread"), railMark=$("#railMark");
+function rail(){
+  const r=rows.getBoundingClientRect(); const h=r.height-80;
+  const p=Math.max(0,Math.min(1,(innerHeight*.55-r.top)/h));
+  thread.style.height=(p*h)+"px"; railMark.style.transform="translateY("+(p*h)+"px) rotate("+(p*450)+"deg)";
+}
+addEventListener("scroll",()=>requestAnimationFrame(rail),{passive:true}); rail();
+
+
+/* ---------- Âge & accord parental ---------- */
+const age=$("#cAge"), pr=$("#parentRow"), pc=$("#cParent");
+age.addEventListener("input",()=>{const a=parseInt(age.value,10);pr.hidden=!(a>=16&&a<18);pc.required=!pr.hidden;});
+
+/* ---------- Envoi ---------- */
+function readFile(f){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(",")[1]);r.onerror=rej;r.readAsDataURL(f);});}
+async function send(payload){
+  const url=window.TALENTYS_ENDPOINT;
+  if(!url) return "preview";
+  await fetch(url,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)});
+  return "sent";
+}
+function fail(el,msg){el.textContent=msg;el.hidden=false;}
+formC.addEventListener("submit",async e=>{
+  e.preventDefault(); const err=$("#cErr"); err.hidden=true;
+  const a=parseInt(age.value,10);
+  if(!$("#cPrenom").value.trim()||!$("#cNom").value.trim()) return fail(err,"Indique ton prénom et ton nom.");
+  if(!/^[0-9 +().-]{9,}$/.test($("#cTel").value.trim())) return fail(err,"Ton numéro de téléphone semble incomplet. Exemple : 06 12 34 56 78.");
+  if(!$("#cMail").checkValidity()||!$("#cMail").value) return fail(err,"Ton adresse email n'est pas valide.");
+  if(!(a>=16&&a<=25)) return fail(err,"La formation et le job dating sont réservés aux 16-25 ans.");
+  if(!$("#cOk").checked) return fail(err,"Coche la case d'accord pour qu'on puisse te recontacter.");
+  if(!pr.hidden&&!pc.checked) return fail(err,"Comme tu as moins de 18 ans, un de tes parents doit être d'accord.");
+  const f=$("#cCv").files[0]; if(f&&f.size>5*1024*1024) return fail(err,"Ton CV dépasse 5 Mo. Envoie une version plus légère, ou postule sans et apporte-le au job dating.");
+  const nv=(document.querySelector('input[name="niveau"]:checked')||{}).value||"";
+  const payload={type:"Candidat",prenom:$("#cPrenom").value.trim(),nom:$("#cNom").value.trim(),tel:$("#cTel").value.trim(),email:$("#cMail").value.trim(),age:a,niveau:nv,parent:!pr.hidden?"Oui":""};
+  try{ if(f){payload.cvName=f.name;payload.cvType=f.type;payload.cv=await readFile(f);} }catch(_){}
+  const btn=formC.querySelector("button[type=submit]"); btn.disabled=true;
+  try{ await send(payload); }catch(_){ btn.disabled=false; return fail(err,"L'envoi n'a pas abouti. Vérifie ta connexion et réessaie, ou écris-nous sur WhatsApp au 07 76 21 82 86."); }
+  const ok=$("#cOkMsg"); ok.hidden=false;
+  ok.innerHTML='<b>C’est envoyé, '+payload.prenom.replace(/[<>&]/g,"")+' !</b><span>Un email de confirmation arrive dans ta boîte. On t’appelle sous 24 h pour réserver ta place au prochain job dating, le '+$("#heroDate").textContent.replace("Vendredi ","vendredi ")+', de 10 h à 14 h.</span>';
+  btn.hidden=true;
+});
+
+/* ---------- Copier ---------- */
+document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",()=>{
+  const sel=()=>{const r=document.createRange();r.selectNodeContents($("#wa"));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Sélectionné";};
+  try{navigator.clipboard.writeText(b.dataset.copy).then(()=>{b.textContent="Copié";},sel);}catch(_){sel();}
+}));
+
+/* ---------- Fenêtres ---------- */
+let lastFocus=null;
+document.querySelectorAll("[data-modal]").forEach(b=>b.addEventListener("click",()=>{const m=document.getElementById(b.dataset.modal);lastFocus=b;m.hidden=false;m.querySelector("[data-close]").focus();}));
+document.querySelectorAll(".modal").forEach(m=>{
+  m.addEventListener("click",e=>{if(e.target===m||e.target.hasAttribute("data-close")){m.hidden=true;lastFocus&&lastFocus.focus();}});
+  m.addEventListener("keydown",e=>{if(e.key==="Escape"){m.hidden=true;lastFocus&&lastFocus.focus();}});
+});
+})();
+</script>
+
+<script type="module">
+/* ---------- Héros : l'hexagone Talentys en 3D ---------- */
+const canvas=document.getElementById("scene");
+const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function fallback(){
+  const d=document.createElement("div"); d.className="fallback-hex"; d.setAttribute("aria-hidden","true");
+  d.innerHTML='<svg viewBox="0 0 100 115"><g fill="none" stroke="#0B1A33" stroke-width="1.2" stroke-linejoin="round"><polygon points="50,4 96,30.5 96,84.5 50,111 4,84.5 4,30.5"/><path d="M50 4 L36 57.5 L50 111 M96 30.5 L36 57.5 M4 84.5 L64 57.5 M50 4 L64 57.5 M4 30.5 L36 57.5 M96 84.5 L64 57.5"/></g><path d="M36 57.5 L50 4 L60 30 Z M64 57.5 L50 111 L40 85 Z" fill="#FF6414" opacity=".9"/></svg>';
+  const sp=document.querySelector('.hero-space'); if(sp&&getComputedStyle(sp).display!=='none'){sp.appendChild(d);canvas.remove();} else canvas.replaceWith(d); window.talentysReady&&window.talentysReady();
+}
+let THREE;
+try{ THREE=await import("three"); }catch(e){ fallback(); }
+if(THREE){ try{ start(); }catch(e){ console.error(e); fallback(); } }
+
+function start(){
+  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+  const mobile=innerWidth<768||matchMedia("(pointer:coarse)").matches;
+  renderer.setPixelRatio(Math.min(devicePixelRatio||1,mobile?1.5:2));
+  const scene=new THREE.Scene();
+  const cam=new THREE.PerspectiveCamera(32,1,.1,100); cam.position.set(0,0,7.2);
+  scene.add(new THREE.AmbientLight(0xffffff,.55));
+  const key=new THREE.DirectionalLight(0xffffff,1.6); key.position.set(3,4,5); scene.add(key);
+  const warm=new THREE.PointLight(0xff6414,14,12); warm.position.set(-2,1,2.5); scene.add(warm);
+
+  const root=new THREE.Group(); scene.add(root);
+  const R=1.55, r=.62;
+  const V=[...Array(6)].map((_,k)=>{const a=Math.PI/2+k*Math.PI/3;return new THREE.Vector3(Math.cos(a)*R,Math.sin(a)*R,0);});
+  const I=[...Array(6)].map((_,k)=>{const a=Math.PI/2+k*Math.PI/3+Math.PI/6;return new THREE.Vector3(Math.cos(a)*r,Math.sin(a)*r,0);});
+  const segs=[];
+  for(let k=0;k<6;k++){
+    segs.push(V[k],V[(k+1)%6]);                // contour
+    segs.push(V[k],I[k]);                      // rayon en hélice
+    segs.push(V[k],I[(k+5)%6]);                // triangulation
+    segs.push(I[k],I[(k+1)%6]);                // hexagone intérieur
+    segs.push(V[k].clone().multiplyScalar(.5).add(V[(k+1)%6].clone().multiplyScalar(.5)), I[k]); // facettes
+  }
+  // ordonner pour un tracé qui part du sommet et tourne
+  const pos=new Float32Array(segs.length*3); segs.forEach((v,i)=>{pos[i*3]=v.x;pos[i*3+1]=v.y;pos[i*3+2]=v.z;});
+  const lg=new THREE.BufferGeometry(); lg.setAttribute("position",new THREE.BufferAttribute(pos,3));
+  const lines=new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:0x0B1A33,transparent:true,opacity:.9}));
+  const hot=new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:0xff6414}));
+  root.add(lines,hot);
+  const back=lines.clone(); back.material=new THREE.LineBasicMaterial({color:0x0B1A33,transparent:true,opacity:.18}); back.position.z=-.34; root.add(back);
+  const total=segs.length; lg.setDrawRange(0,0);
+
+  // pales extrudées (le "S" du logo)
+  const blades=new THREE.Group(); root.add(blades);
+  const mNavy=new THREE.MeshStandardMaterial({color:0x13264d,metalness:.55,roughness:.32});
+  const mGold=new THREE.MeshStandardMaterial({color:0xC9A45C,metalness:.85,roughness:.25});
+  const mOr=new THREE.MeshStandardMaterial({color:0xff6414,metalness:.3,roughness:.4,emissive:0xff6414,emissiveIntensity:0});
+  [[0,mNavy],[3,mNavy],[1,mOr],[4,mGold]].forEach(([k,m],idx)=>{
+    const a=I[k], b=V[(k+1)%6], c=V[(k+1)%6].clone().lerp(V[(k+2)%6],.42), d=I[(k+1)%6];
+    const sh=new THREE.Shape([new THREE.Vector2(a.x,a.y),new THREE.Vector2(b.x*.94,b.y*.94),new THREE.Vector2(c.x*.9,c.y*.9),new THREE.Vector2(d.x,d.y)]);
+    const ge=new THREE.ExtrudeGeometry(sh,{depth:idx<2?.26:.12,bevelEnabled:true,bevelSize:.012,bevelThickness:.012,bevelSegments:1});
+    ge.translate(0,0,-.13);
+    const mesh=new THREE.Mesh(ge,m); mesh.scale.setScalar(.001); mesh.userData.delay=.55+idx*.12; blades.add(mesh);
+    const edges=new THREE.LineSegments(new THREE.EdgesGeometry(ge),new THREE.LineBasicMaterial({color:0xff6414,transparent:true,opacity:.0}));
+    mesh.add(edges); mesh.userData.edges=edges;
+  });
+
+  // onde de balayage
+  const ringG=new THREE.BufferGeometry().setFromPoints([...V,V[0]]);
+  const ring=new THREE.Line(ringG,new THREE.LineBasicMaterial({color:0xff6414,transparent:true,opacity:0}));
+  root.add(ring);
+
+  let W=0,H=0;
+  function resize(){
+    W=canvas.clientWidth; H=canvas.clientHeight; renderer.setSize(W,H,false); cam.aspect=W/H; cam.updateProjectionMatrix();
+    const wide=W>=1180;
+    if(wide){ root.position.set(0.15,0,0); root.scale.setScalar(1.08); }
+    else {
+      const sp=document.querySelector('.hero-space'), sr=sp.getBoundingClientRect(), cr=canvas.getBoundingClientRect();
+      const halfH=Math.tan(THREE.MathUtils.degToRad(cam.fov/2))*cam.position.z, upp=2*halfH/H;
+      const cy=(sr.top-cr.top)+sr.height/2;
+      root.position.set(0,(H/2-cy)*upp,0);
+      const fitH=sr.height*.92*upp/3.1, fitW=W*.82*upp/2.7;
+      root.scale.setScalar(Math.max(.3,Math.min(fitH,fitW)));
+    }
+  }
+  resize(); addEventListener("resize",resize); setTimeout(resize,800);
+
+  const ptr={x:0,y:0}, cur={x:0,y:0};
+  if(!mobile) addEventListener("pointermove",e=>{ptr.x=e.clientX/innerWidth*2-1;ptr.y=e.clientY/innerHeight*2-1;});
+  let visible=true; new IntersectionObserver(e=>{visible=e[0].isIntersecting;}).observe(canvas);
+
+  renderer.compile(scene,cam); renderer.render(scene,cam);
+  window.talentysReady&&window.talentysReady();
+
+  let tGo=null; const ease=t=>1-Math.pow(1-t,3);
+  window.addEventListener("talentys:go",()=>{tGo=performance.now();});
+  if(document.body.classList.contains("go")) tGo=performance.now();
+  const clock=new THREE.Clock();
+  function frame(){
+    requestAnimationFrame(frame);
+    if(!visible) return;
+    const t=clock.getElapsedTime();
+    const since=tGo?(performance.now()-tGo)/1000:0;
+    const drawP=RM?1:Math.min(1,since/1.6);
+    const n=Math.floor(ease(drawP)*total/2)*2;
+    lg.setDrawRange(0,n);
+    hot.geometry.setDrawRange(Math.max(0,n-6),drawP<1?6:0);
+    blades.children.forEach(m=>{
+      const p=RM?1:Math.max(0,Math.min(1,(since-m.userData.delay)/.7));
+      const s=.001+ease(p)*.999; m.scale.setScalar(s);
+      m.userData.edges.material.opacity=p>0?Math.max(0,1-(since-m.userData.delay-.4)):0;
+      if(m.material.emissive) m.material.emissiveIntensity=p>0&&p<1?.6*(1-p)+.12:.12;
+    });
+    // balayage toutes les 3,1 s
+    if(!RM&&since>2){ const c=((t%3.1)/3.1); ring.scale.setScalar(.35+c*1.25); ring.material.opacity=(1-c)*.55*(c>.02?1:0); }
+    cur.x+=(ptr.x-cur.x)*.06; cur.y+=(ptr.y-cur.y)*.06;
+    const idle=RM?0:Math.sin(t*.35)*.18;
+    root.rotation.y=idle+cur.x*.55;
+    root.rotation.x=cur.y*.35+(RM?0:Math.sin(t*.27)*.06);
+    root.rotation.z=RM?0:t*.02;
+    warm.position.set(cur.x*3,-cur.y*2.2,2.6);
+    renderer.render(scene,cam);
+  }
+  frame();
+}
+</script>
+
+</body>
+</html>
