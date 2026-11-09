@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Recruter avec Talentys</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Recrutez votre commercial en alternance (titre Bac+2 Négociateur technico-commercial). Décrivez le profil en 2 minutes, recevez 3 à 5 candidats présélectionnés.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Mise en page : questionnaire pas à pas à gauche, fiche « profil recherché » qui se remplit en direct à droite (barre basse sur mobile) */
+:root{
+  --navy:#0A1328; --ink:#14203A; --muted:#5B6782; --line:#DCE1EC; --paper:#F6F7FA; --card:#FFFFFF;
+  --orange:#E8590C; --orange-ink:#FFFFFF; --orange-soft:#FDEBDF; --ok:#1F7A4D; --warn:#9A5B00; --warn-soft:#FFF4DC; --err:#B42318;
+  --bg:var(--paper); --fg:var(--ink);
+  --f-display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:12px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --ink:#E6EAF3; --muted:#9AA6C0; --line:#26324D; --paper:#0A1328; --card:#111C35;
+  --orange:#FF7A2E; --orange-ink:#1A0D04; --orange-soft:#3A2214; --ok:#5BD08F; --warn:#F2B654; --warn-soft:#33270F; --err:#FF8A80;
+  --bg:var(--paper); --fg:var(--ink); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --ink:#E6EAF3; --muted:#9AA6C0; --line:#26324D; --paper:#0A1328; --card:#111C35;
+  --orange:#FF7A2E; --orange-ink:#1A0D04; --orange-soft:#3A2214; --ok:#5BD08F; --warn:#F2B654; --warn-soft:#33270F; --err:#FF8A80;
+  --bg:var(--paper); --fg:var(--ink); color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--f-body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-block:20px 120px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.brand{font:800 1.35rem/1 var(--f-display);letter-spacing:-.01em;color:var(--fg);text-decoration:none}
+.brand small{display:block;font:600 .68rem/1.4 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.contact{font-size:.9rem;color:var(--muted)}
+.contact b{color:var(--fg);font-weight:600}
+
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;margin-top:28px;align-items:start}
+@media (max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Progression */
+.progress{display:flex;gap:6px;margin-bottom:22px}
+.progress span{flex:1;height:4px;border-radius:2px;background:var(--line)}
+.progress span.done{background:var(--orange)}
+.stepmeta{font:500 .78rem var(--f-mono);color:var(--muted);letter-spacing:.04em;margin-bottom:10px}
+
+h1{font:800 clamp(1.9rem,4.4vw,3rem)/1.05 var(--f-display);letter-spacing:-.02em;margin:0 0 14px;text-wrap:balance}
+h2{font:700 clamp(1.4rem,3vw,1.85rem)/1.15 var(--f-display);letter-spacing:-.01em;margin:0 0 6px;text-wrap:balance}
+.lead{font-size:1.08rem;color:var(--muted);max-width:58ch;margin:0 0 22px}
+.hint{color:var(--muted);font-size:.93rem;margin:0 0 16px;max-width:62ch}
+.req{color:var(--orange)}
+.q{margin-bottom:26px}
+.q > label, .q > .qlabel{display:block;font-weight:600;margin-bottom:8px}
+
+/* Intro */
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:8px 0 26px}
+@media (max-width:640px){.facts{grid-template-columns:minmax(0,1fr)}}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.fact strong{display:block;font:800 1.45rem/1.1 var(--f-display);color:var(--orange);margin-bottom:4px}
+.fact span{font-size:.92rem;color:var(--muted)}
+.steps-list{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:10px;max-width:60ch}
+.steps-list li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:start}
+.steps-list i{font:500 .8rem/28px var(--f-mono);font-style:normal;text-align:center;border:1px solid var(--line);border-radius:50%;height:28px;color:var(--muted)}
+
+/* Choix */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{appearance:none;border:1.5px solid var(--line);background:var(--card);color:var(--fg);border-radius:999px;padding:9px 15px;font:500 .95rem var(--f-body);cursor:pointer;transition:border-color .15s,background .15s}
+.chip:hover{border-color:var(--orange)}
+.chip[aria-pressed="true"]{background:var(--orange);border-color:var(--orange);color:var(--orange-ink)}
+.chip:focus-visible,.btn:focus-visible,input:focus-visible,textarea:focus-visible,.edit:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.tile{appearance:none;text-align:left;border:1.5px solid var(--line);background:var(--card);color:var(--fg);border-radius:var(--r);padding:14px 16px;cursor:pointer;font:inherit}
+.tile b{display:block;font-weight:600}
+.tile span{display:block;font-size:.86rem;color:var(--muted);margin-top:2px}
+.tile[aria-pressed="true"]{border-color:var(--orange);background:var(--orange-soft)}
+.tile:hover{border-color:var(--orange)}
+
+input[type=text],input[type=tel],input[type=email],textarea{width:100%;background:var(--card);color:var(--fg);border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font:16px var(--f-body)}
+textarea{min-height:120px;resize:vertical}
+input.cp{max-width:9rem;font:500 1.4rem var(--f-mono);letter-spacing:.12em}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:560px){.fields{grid-template-columns:minmax(0,1fr)}}
+.field label{display:block;font-weight:600;font-size:.92rem;margin-bottom:6px}
+.field .opt{font-weight:400;color:var(--muted)}
+.err{color:var(--err);font-size:.9rem;margin-top:8px;min-height:1.2em}
+.note{background:var(--warn-soft);color:var(--warn);border-radius:10px;padding:12px 14px;font-size:.92rem;margin-top:12px}
+.legal{font-size:.84rem;color:var(--muted);margin-top:10px;max-width:62ch}
+.check{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:start;font-size:.92rem;color:var(--muted)}
+.check input{width:20px;height:20px;margin-top:2px;accent-color:var(--orange)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.btn{appearance:none;border:0;border-radius:10px;padding:14px 22px;font:700 1rem var(--f-body);cursor:pointer}
+.btn-main{background:var(--orange);color:var(--orange-ink)}
+.btn-main[disabled]{opacity:.55;cursor:default}
+.btn-ghost{background:transparent;color:var(--muted);border:1.5px solid var(--line)}
+.kbd{font:500 .78rem var(--f-mono);color:var(--muted)}
+
+/* Récap */
+.recap{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.recap dl{margin:0}
+.recap .row{display:grid;grid-template-columns:150px minmax(0,1fr) auto;gap:12px;padding:12px 16px;border-top:1px solid var(--line);align-items:start}
+.recap .row:first-child{border-top:0}
+@media (max-width:560px){.recap .row{grid-template-columns:minmax(0,1fr) auto}.recap dt{grid-column:1/-1}}
+.recap dt{color:var(--muted);font-size:.88rem}
+.recap dd{margin:0;font-weight:500}
+.edit{appearance:none;background:none;border:0;color:var(--orange);font:600 .88rem var(--f-body);cursor:pointer;padding:0}
+
+/* Fiche profil */
+aside.sheet{position:sticky;top:20px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.sheet-head{background:var(--navy);color:#fff;padding:16px 18px}
+.sheet-head small{font:500 .72rem var(--f-mono);letter-spacing:.08em;color:#AEB9D3;text-transform:uppercase}
+.sheet-head b{display:block;font:700 1.15rem var(--f-display);margin-top:4px}
+.sheet-body{padding:6px 18px 14px}
+.sheet-row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:.92rem}
+.sheet-row:last-child{border-bottom:0}
+.sheet-row span{color:var(--muted)}
+.sheet-row em{font-style:normal;color:var(--muted);opacity:.7}
+.aid{border-top:1px solid var(--line);padding:16px 18px;background:var(--orange-soft)}
+.aid small{display:block;font-size:.8rem;color:var(--muted)}
+.aid strong{display:block;font:800 1.9rem/1.1 var(--f-display);color:var(--orange);font-variant-numeric:tabular-nums;margin:2px 0}
+.aid p{margin:6px 0 0;font-size:.8rem;color:var(--muted)}
+
+/* Barre mobile */
+.mbar{display:none}
+@media (max-width:900px){
+  aside.sheet{display:none}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;gap:10px;align-items:center;justify-content:space-between;background:var(--navy);color:#fff;
+    padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+  .mbar small{display:block;font-size:.72rem;color:#AEB9D3}
+  .mbar b{font:800 1.15rem var(--f-display);font-variant-numeric:tabular-nums}
+  .mbar .btn{padding:11px 16px}
+}
+
+.done-box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.done-box ol{padding-left:1.2em;margin:12px 0 0;display:grid;gap:8px}
+.preview{font:500 .82rem var(--f-mono);background:var(--warn-soft);color:var(--warn);padding:8px 12px;border-radius:8px;margin-top:14px}
+
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted)}
+footer a{color:var(--muted)}
+
+@media (prefers-reduced-motion:no-preference){
+  .step{animation:in .25s ease both}
+  @keyframes in{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="/">Talentys<small>École des commerciaux · Espace entreprises</small></a>
+    <div class="contact">Une question ? <b>01 89 62 93 26</b> · <b>direction@talentys.info</b></div>
+  </header>
+
+  <div class="grid">
+    <main id="app" aria-live="polite"></main>
+
+    <aside class="sheet" aria-label="Profil recherché">
+      <div class="sheet-head"><small>Fiche de poste · brouillon</small><b id="sh-title">Commercial en alternance</b></div>
+      <div class="sheet-body" id="sh-body"></div>
+      <div class="aid">
+        <small>Aide de l'État à l'embauche</small>
+        <strong id="sh-aid">jusqu'à 4 500 €</strong>
+        <p id="sh-aid-note">par contrat, la 1re année, pour une entreprise de moins de 250 salariés.</p>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    Talentys · 6 rue Sadi Carnot, 93170 Bagnolet · Titre professionnel Négociateur technico-commercial (RNCP39063), niveau 5 (Bac+2).
+    Aide exceptionnelle aux employeurs d'apprentis : décret n° 2026-168 du 6 mars 2026, contrats conclus à partir du 8 mars 2026 et commencés avant le 1er janvier 2027. Montant versé par l'ASP, sous réserve des conditions du décret.
+    · Mentions légales et confidentialité : <a href="/">en bas de la page d'accueil</a>
+  </footer>
+</div>
+
+<div class="mbar" id="mbar">
+  <div><small>Aide estimée par contrat</small><b id="mb-aid">jusqu'à 4 500 €</b></div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- Réglages ---------- */
+var SB_URL = "https://kfjetzgjogktlgcvetbp.supabase.co";
+var SB_KEY = "sb_publishable_WLPSnMC1_By6yQdpaluGeA_x-p6ddVi";
+var HOTES_EN_LIGNE = ["talentys.info","www.talentys.info","talentys-phi.vercel.app"];
+var EN_LIGNE = HOTES_EN_LIGNE.indexOf(location.hostname) > -1;
+var FERIES = ["1-1","1-5","8-5","14-7","15-8","1-11","11-11","25-12"];
+
+var POSTES = [
+  {k:"Commercial terrain B2B", d:"Prospection et visites clients"},
+  {k:"Technico-commercial", d:"Vente de produits ou services techniques"},
+  {k:"Commercial sédentaire", d:"Téléprospection, prise de rendez-vous, devis"},
+  {k:"Chargé d'affaires", d:"Suivi d'un portefeuille de comptes"},
+  {k:"Business developer", d:"Ouverture de nouveaux marchés"},
+  {k:"Conseiller commercial", d:"Accueil et vente en agence ou showroom"}
+];
+var SECTEURS = ["Négoce et distribution","Services aux entreprises","Informatique et télécoms","Énergie","BTP et industrie","Immobilier","Automobile","Autre"];
+var CRITERES = ["Permis B","Véhiculé","Anglais professionnel","Une autre langue","À l'aise au téléphone","Déjà une expérience de vente","Bac obtenu"];
+var QUALITES = ["Ténacité","Aisance relationnelle","Organisation","Écoute","Présentation soignée","Ponctualité","Curiosité technique","Goût du challenge"];
+var NOMBRES = ["1","2","3","4","5 et plus"];
+var JOURS = ["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Peu importe"];
+var TAILLES = [
+  {k:"1 à 10 salariés", aide:4500},
+  {k:"11 à 49 salariés", aide:4500},
+  {k:"50 à 249 salariés", aide:4500},
+  {k:"250 salariés et plus", aide:1500}
+];
+var MOIS_NOMS = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+var JOURS_NOMS = ["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"];
+
+function prochainsMois(n){
+  var out=[], d=new Date(); d.setDate(1);
+  for(var i=0;i<n;i++){ var m=new Date(d.getFullYear(), d.getMonth()+i, 1);
+    out.push({v:m.getFullYear()+"-"+String(m.getMonth()+1).padStart(2,"0"), l:MOIS_NOMS[m.getMonth()]+" "+m.getFullYear(), annee:m.getFullYear()}); }
+  return out;
+}
+function prochainsVendredis(n){
+  var out=[], d=new Date(); d.setHours(0,0,0,0);
+  var add=(5-d.getDay()+7)%7; if(add===0 && new Date().getHours()>=14) add=7;
+  d.setDate(d.getDate()+add);
+  while(out.length<n){
+    if(FERIES.indexOf(d.getDate()+"-"+(d.getMonth()+1))===-1) out.push("vendredi "+d.getDate()+" "+MOIS_NOMS[d.getMonth()]);
+    d.setDate(d.getDate()+7);
+  }
+  return out;
+}
+var MOIS = prochainsMois(6);
+var VENDREDIS = prochainsVendredis(3);
+var RDV = VENDREDIS.map(function(v){return "Job dating du "+v+", 10 h – 14 h, Bagnolet";}).concat(["Un rendez-vous en visio","Recevoir d'abord les profils par mail"]);
+
+/* ---------- Source du visiteur ---------- */
+function lireSource(){
+  var q=new URLSearchParams(location.search), src=(q.get("utm_source")||q.get("src")||"").toLowerCase().trim(), camp=(q.get("utm_campaign")||q.get("campagne")||"").trim();
+  if(!src){ if(q.get("fbclid")) src="facebook-instagram"; else if(q.get("ttclid")) src="tiktok"; else if(q.get("gclid")) src="google-ads"; else if(q.get("li_fat_id")) src="linkedin"; }
+  if(!src){ var r=(document.referrer||"").toLowerCase();
+    if(!r) src="direct"; else if(r.indexOf(location.hostname)>-1) src="site"; else if(r.indexOf("linkedin")>-1||r.indexOf("lnkd.in")>-1) src="linkedin";
+    else if(r.indexOf("google")>-1) src="google"; else if(r.indexOf("facebook")>-1) src="facebook"; else if(r.indexOf("instagram")>-1) src="instagram";
+    else { try{ src=new URL(r).hostname.replace(/^www\./,""); }catch(_){ src="autre"; } } }
+  return {source:src, campagne:camp};
+}
+var visite; try{ var s=sessionStorage.getItem("tl_source"); visite=s?JSON.parse(s):lireSource(); if(!s) sessionStorage.setItem("tl_source",JSON.stringify(visite)); }catch(_){ visite=lireSource(); }
+
+/* ---------- État ---------- */
+var S = {postes:[], secteur:"", criteres:[], langue:"", qualites:[], precisions:"", nombre:"", mois:"", cp:"", jour:"Peu importe",
+         entreprise:"", taille:"", siret:"", prenom:"", nom:"", fonction:"", tel:"", email:"", rdv:"", rgpd:false, hp:""};
+var step = 0, LAST = 6, envoi = false;
+try{ var brouillon = JSON.parse(localStorage.getItem("tl_ent_brouillon")||"null"); if(brouillon && brouillon.S){ Object.assign(S, brouillon.S); S.rgpd=false; } }catch(_){}
+function sauver(){ try{ localStorage.setItem("tl_ent_brouillon", JSON.stringify({S:S})); }catch(_){} }
+
+var app = document.getElementById("app");
+function esc(t){ return String(t).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
+function nb(){ return S.nombre==="5 et plus" ? 5 : (parseInt(S.nombre,10)||1); }
+function euros(n){ return n.toLocaleString("fr-FR")+" €"; }
+function aideUnitaire(){ var t=TAILLES.filter(function(x){return x.k===S.taille;})[0]; return t ? t.aide : 4500; }
+function moisChoisi(){ return MOIS.filter(function(m){return m.v===S.mois;})[0]; }
+function horsDelaiAide(){ var m=moisChoisi(); return m && m.annee>=2027; }
+function departement(){ if(!/^\d{5}$/.test(S.cp)) return ""; var d=S.cp.slice(0,2); return d; }
+function enIDF(){ return ["75","77","78","91","92","93","94","95"].indexOf(departement())>-1; }
+
+/* ---------- Fiche latérale ---------- */
+function majFiche(){
+  var lignes = [
+    ["Poste", S.postes.length ? S.postes.join(", ") : ""],
+    ["Secteur", S.secteur],
+    ["Profil", S.criteres.map(function(c){return c==="Une autre langue" && S.langue ? S.langue : c;}).join(", ")],
+    ["Qualités", S.qualites.join(", ")],
+    ["Nombre", S.nombre],
+    ["Démarrage", moisChoisi() ? moisChoisi().l : ""],
+    ["Lieu", /^\d{5}$/.test(S.cp) ? S.cp : ""],
+    ["Jour d'école", S.jour],
+    ["Rythme", "4 jours chez vous, 1 jour à l'école"]
+  ];
+  document.getElementById("sh-body").innerHTML = lignes.map(function(l){
+    return '<div class="sheet-row"><span>'+l[0]+'</span><div>'+(l[1]?esc(l[1]):'<em>à préciser</em>')+'</div></div>'; }).join("");
+  document.getElementById("sh-title").textContent = S.postes.length===1 ? S.postes[0]+" en alternance" : "Commercial en alternance";
+  var a = aideUnitaire(), n = nb(), txt;
+  if(horsDelaiAide()){ txt = "à confirmer"; }
+  else txt = "jusqu'à "+euros(a);
+  document.getElementById("sh-aid").textContent = txt;
+  document.getElementById("mb-aid").textContent = txt;
+  var note;
+  if(horsDelaiAide()) note = "L'aide actuelle couvre les contrats commencés avant le 1er janvier 2027. Le dispositif 2027 n'est pas encore publié.";
+  else if(a===1500) note = "par contrat la 1re année, si l'entreprise atteint le quota d'alternants fixé par le décret (5 % de l'effectif, ou 3 % en hausse de 10 %)." + (n>1 ? " Soit jusqu'à "+euros(a*n)+" pour "+S.nombre+" contrats." : "");
+  else note = "par contrat, la 1re année, pour une entreprise de moins de 250 salariés." + (n>1 ? " Soit jusqu'à "+euros(a*n)+" pour "+S.nombre+" contrats." : "");
+  document.getElementById("sh-aid-note").textContent = note;
+}
+
+/* ---------- Composants ---------- */
+function chips(name, list, multi, max){
+  return '<div class="chips" role="group">'+list.map(function(v){
+    var on = multi ? S[name].indexOf(v)>-1 : S[name]===v;
+    return '<button type="button" class="chip" data-f="'+name+'" data-v="'+esc(v)+'" data-multi="'+(multi?1:0)+'" data-max="'+(max||0)+'" aria-pressed="'+on+'">'+esc(v)+'</button>'; }).join("")+'</div>';
+}
+function field(id, label, type, opt, extra){
+  return '<div class="field"><label for="f-'+id+'">'+label+(opt?' <span class="opt">(facultatif)</span>':' <span class="req">*</span>')+'</label>'+
+    '<input id="f-'+id+'" type="'+type+'" data-f="'+id+'" value="'+esc(S[id])+'" '+(extra||"")+'></div>';
+}
+function progress(){
+  var h='<div class="progress" aria-hidden="true">'; for(var i=1;i<=LAST;i++) h+='<span class="'+(i<=step?'done':'')+'"></span>'; return h+'</div>'+
+    '<div class="stepmeta">Étape '+step+' sur '+LAST+'</div>';
+}
+function nav(label){
+  return '<div class="err" id="err"></div><div class="actions">'+
+    (step>1?'<button type="button" class="btn btn-ghost" id="back">Retour</button>':'')+
+    '<button type="button" class="btn btn-main" id="next">'+(label||"Continuer")+'</button>'+
+    '<span class="kbd">ou Entrée ↵</span></div>';
+}
+
+/* ---------- Écrans ---------- */
+var ECRANS = {
+  0: function(){ return '<section class="step">'+
+    '<h1>Votre prochain commercial, formé chez vous.</h1>'+
+    '<p class="lead">Décrivez le profil que vous cherchez en 2 minutes. On vous présente 3 à 5 candidats déjà rencontrés et motivés, qui préparent un titre Bac+2 de négociateur technico-commercial.</p>'+
+    '<div class="facts">'+
+      '<div class="fact"><strong>4 j / 1 j</strong><span>4 jours par semaine chez vous, 1 jour à l\'école à Bagnolet. Vous choisissez le jour.</span></div>'+
+      '<div class="fact"><strong>jusqu\'à 4 500 €</strong><span>d\'aide de l\'État par contrat la 1re année (moins de 250 salariés), pour un contrat commencé avant le 1er janvier 2027.</span></div>'+
+      '<div class="fact"><strong>0 € de formation</strong><span>Le coût de la formation est pris en charge par votre OPCO, selon le niveau fixé par votre branche. On le vérifie avec vous avant la signature.</span></div>'+
+    '</div>'+
+    '<ul class="steps-list">'+
+      '<li><i>1</i><span>Vous décrivez le poste et le profil idéal.</span></li>'+
+      '<li><i>2</i><span>On vous appelle sous 24 h ouvrées pour valider le besoin.</span></li>'+
+      '<li><i>3</i><span>Vous recevez une sélection de profils, puis vous les rencontrez au job dating du vendredi ou en visio.</span></li>'+
+      '<li><i>4</i><span>On prépare le contrat d\'apprentissage et le dossier OPCO avec vous.</span></li>'+
+    '</ul>'+
+    '<div class="actions"><button type="button" class="btn btn-main" id="next">Décrire mon besoin</button><span class="kbd">2 minutes · sans engagement</span></div>'+
+    '</section>'; },
+
+  1: function(){ return '<section class="step">'+progress()+
+    '<h2>Quel poste voulez-vous confier ?</h2><p class="hint">Plusieurs choix possibles.</p>'+
+    '<div class="q"><div class="tiles" role="group">'+POSTES.map(function(p){ var on=S.postes.indexOf(p.k)>-1;
+      return '<button type="button" class="tile" data-f="postes" data-v="'+esc(p.k)+'" data-multi="1" aria-pressed="'+on+'"><b>'+esc(p.k)+'</b><span>'+esc(p.d)+'</span></button>'; }).join("")+'</div></div>'+
+    '<div class="q"><span class="qlabel">Votre secteur <span class="opt" style="font-weight:400;color:var(--muted)">(facultatif)</span></span>'+chips("secteur",SECTEURS,false)+'</div>'+
+    nav()+'</section>'; },
+
+  2: function(){ return '<section class="step">'+progress()+
+    '<h2>Le profil sur mesure</h2><p class="hint">Cochez ce qui compte vraiment pour le poste. Moins vous mettez de critères, plus on peut vous proposer de candidats.</p>'+
+    '<div class="q"><span class="qlabel">Indispensable pour le poste</span>'+chips("criteres",CRITERES,true)+
+      (S.criteres.indexOf("Une autre langue")>-1 ? '<div class="field" style="margin-top:12px;max-width:320px"><label for="f-langue">Quelle langue ?</label><input id="f-langue" type="text" data-f="langue" value="'+esc(S.langue)+'"></div>' : '')+'</div>'+
+    '<div class="q"><span class="qlabel">Les 3 qualités que vous recherchez en priorité</span>'+chips("qualites",QUALITES,true,3)+'</div>'+
+    '<div class="q"><label for="f-precisions">Autre chose à savoir ? <span class="opt" style="font-weight:400;color:var(--muted)">(facultatif)</span></label>'+
+      '<textarea id="f-precisions" data-f="precisions" placeholder="Ex. : clientèle d\'artisans, déplacements en Seine-Saint-Denis, produits à expliquer techniquement…">'+esc(S.precisions)+'</textarea>'+
+      '<p class="legal">L\'âge, le sexe, l\'origine, l\'adresse ou la situation familiale ne peuvent pas être des critères de recrutement (article L1132-1 du Code du travail). On ne les prend pas en compte.</p></div>'+
+    nav()+'</section>'; },
+
+  3: function(){ return '<section class="step">'+progress()+
+    '<h2>Combien d\'alternants, et à partir de quand ?</h2>'+
+    '<div class="q"><span class="qlabel">Nombre d\'alternants <span class="req">*</span></span>'+chips("nombre",NOMBRES,false)+'</div>'+
+    '<div class="q"><span class="qlabel">Démarrage souhaité <span class="req">*</span></span>'+
+      '<div class="chips" role="group">'+MOIS.map(function(m){ return '<button type="button" class="chip" data-f="mois" data-v="'+m.v+'" data-multi="0" aria-pressed="'+(S.mois===m.v)+'">'+m.l+'</button>'; }).join("")+'</div>'+
+      (horsDelaiAide() ? '<div class="note">Bon à savoir : l\'aide de 4 500 € concerne les contrats commencés avant le 1er janvier 2027. Pour un démarrage en 2027, le montant dépendra du dispositif qui sera publié. Un démarrage en décembre permet d\'en bénéficier.</div>' : '')+
+    '</div>'+nav()+'</section>'; },
+
+  4: function(){ return '<section class="step">'+progress()+
+    '<h2>Où, et quel jour d\'école vous arrange ?</h2>'+
+    '<div class="q"><label for="f-cp">Code postal du lieu de travail <span class="req">*</span></label>'+
+      '<input id="f-cp" class="cp" type="text" inputmode="numeric" maxlength="5" placeholder="93170" data-f="cp" value="'+esc(S.cp)+'">'+
+      '<p class="hint" style="margin-top:8px">On cherche en priorité des candidats qui habitent à proximité.</p>'+
+      (/^\d{5}$/.test(S.cp) && !enIDF() ? '<div class="note">Nos alternants suivent leurs cours à Bagnolet (93), un jour par semaine. Un poste hors Île-de-France reste possible, mais le choix de candidats sera plus réduit.</div>' : '')+'</div>'+
+    '<div class="q"><span class="qlabel">Jour d\'école qui gêne le moins votre activité</span>'+
+      '<p class="hint">Chaque classe a son jour fixe. On place votre alternant dans la classe qui vous arrange.</p>'+chips("jour",JOURS,false)+'</div>'+
+    nav()+'</section>'; },
+
+  5: function(){ return '<section class="step">'+progress()+
+    '<h2>Votre entreprise</h2>'+
+    '<div class="q">'+field("entreprise","Nom de l'entreprise","text",false,'autocomplete="organization"')+'</div>'+
+    '<div class="q"><span class="qlabel">Effectif <span class="req">*</span></span><p class="hint">Il détermine le montant de l\'aide affiché à droite.</p>'+chips("taille",TAILLES.map(function(t){return t.k;}),false)+'</div>'+
+    '<div class="q" style="max-width:340px">'+field("siret","SIRET","text",true,'inputmode="numeric" maxlength="17" placeholder="14 chiffres"')+'</div>'+
+    nav()+'</section>'; },
+
+  6: function(){ return '<section class="step">'+progress()+
+    '<h2>Qui rappelle-t-on ?</h2>'+
+    '<div class="q fields">'+
+      field("prenom","Prénom","text",false,'autocomplete="given-name"')+field("nom","Nom","text",false,'autocomplete="family-name"')+
+      field("tel","Téléphone","tel",false,'autocomplete="tel" placeholder="06 12 34 56 78"')+field("email","E-mail professionnel","email",false,'autocomplete="email"')+
+      field("fonction","Votre fonction","text",true,'placeholder="Gérant, directeur commercial, RH…"')+
+    '</div>'+
+    '<div class="q"><span class="qlabel">Comment voulez-vous rencontrer les candidats ? <span class="opt" style="font-weight:400;color:var(--muted)">(facultatif)</span></span>'+chips("rdv",RDV,false)+'</div>'+
+    '<div class="hp" aria-hidden="true"><label for="f-hp">Ne pas remplir</label><input id="f-hp" type="text" tabindex="-1" autocomplete="off" data-f="hp"></div>'+
+    '<label class="check"><input type="checkbox" id="f-rgpd" '+(S.rgpd?'checked':'')+'><span>J\'accepte que Talentys utilise ces informations pour me recontacter au sujet de mon recrutement. Elles ne sont ni vendues ni transmises à des tiers. Je peux demander leur suppression à tout moment à direction@talentys.info. <span class="req">*</span></span></label>'+
+    nav("Vérifier ma demande")+'</section>'; },
+
+  7: function(){
+    var m=moisChoisi();
+    var rows=[
+      [1,"Poste",S.postes.join(", ")+(S.secteur?" · "+S.secteur:"")],
+      [2,"Profil",(S.criteres.map(function(c){return c==="Une autre langue"&&S.langue?S.langue:c;}).join(", ")||"Pas de critère imposé")+(S.qualites.length?" · Qualités : "+S.qualites.join(", "):"")+(S.precisions?" · "+S.precisions:"")],
+      [3,"Besoin",S.nombre+" alternant"+(nb()>1?"s":"")+", démarrage "+(m?m.l:"")],
+      [4,"Lieu",S.cp+" · école le "+S.jour.toLowerCase()],
+      [5,"Entreprise",S.entreprise+" · "+S.taille+(S.siret?" · SIRET "+S.siret:"")],
+      [6,"Contact",S.prenom+" "+S.nom+(S.fonction?" ("+S.fonction+")":"")+" · "+S.tel+" · "+S.email+(S.rdv?" · "+S.rdv:"")]
+    ];
+    return '<section class="step"><div class="stepmeta">Dernière vérification</div><h2>Votre demande</h2>'+
+      '<p class="hint">Relisez, corrigez si besoin, puis envoyez.</p>'+
+      '<div class="recap">'+rows.map(function(r){ return '<div class="row"><dt>'+r[1]+'</dt><dd>'+esc(r[2])+'</dd><button type="button" class="edit" data-go="'+r[0]+'">Modifier</button></div>'; }).join("")+'</div>'+
+      '<div class="err" id="err"></div><div class="actions"><button type="button" class="btn btn-main" id="send"'+(envoi?' disabled':'')+'>'+(envoi?'Envoi…':'Envoyer ma demande')+'</button></div></section>'; },
+
+  8: function(){ return '<section class="step"><div class="done-box">'+
+    '<h2>Demande reçue, merci '+esc(S.prenom)+'.</h2>'+
+    '<p class="hint" style="margin:0">Un e-mail de confirmation part à '+esc(S.email)+'.</p>'+
+    '<ol><li>On vous appelle sous 24 h ouvrées pour valider le profil.</li><li>Vous recevez une sélection de 3 à 5 candidats.</li><li>Vous les rencontrez'+(S.rdv && S.rdv.indexOf("Job dating")===0 ? ' au '+esc(S.rdv.replace("Job dating du","job dating du")) : ' au job dating du vendredi à Bagnolet ou en visio')+'.</li></ol>'+
+    (EN_LIGNE ? '' : '<div class="preview">Aperçu : rien n\'a été envoyé. Le formulaire n\'enverra les demandes qu\'une fois en ligne sur talentys.info.</div>')+
+    '</div></section>'; }
+};
+
+/* ---------- Validation ---------- */
+function valider(){
+  if(step===1 && !S.postes.length) return "Choisissez au moins un poste.";
+  if(step===2 && S.criteres.indexOf("Une autre langue")>-1 && !S.langue.trim()) return "Précisez la langue demandée.";
+  if(step===3){ if(!S.nombre) return "Indiquez le nombre d'alternants."; if(!S.mois) return "Choisissez un mois de démarrage."; }
+  if(step===4 && !/^\d{5}$/.test(S.cp)) return "Le code postal doit compter 5 chiffres.";
+  if(step===5){ if(!S.entreprise.trim()) return "Indiquez le nom de l'entreprise."; if(!S.taille) return "Choisissez l'effectif de l'entreprise.";
+    if(S.siret && !/^\d{14}$/.test(S.siret.replace(/\s/g,""))) return "Le SIRET compte 14 chiffres. Laissez vide si vous ne l'avez pas sous la main."; }
+  if(step===6){
+    if(!S.prenom.trim()||!S.nom.trim()) return "Indiquez votre prénom et votre nom.";
+    if(S.tel.replace(/\D/g,"").length<9) return "Le numéro de téléphone semble incomplet.";
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(S.email.trim())) return "L'adresse e-mail n'est pas valide (exemple : prenom@entreprise.fr).";
+    if(!S.rgpd) return "Cochez la case d'accord pour qu'on puisse vous recontacter.";
+  }
+  return "";
+}
+
+/* ---------- Envoi ---------- */
+function envoyer(){
+  if(S.hp){ step=8; rendu(); return; }
+  envoi=true; rendu();
+  var m=moisChoisi();
+  var d={ type:"Entreprise", entreprise:S.entreprise.trim(), siret:S.siret.replace(/\s/g,""), taille:S.taille,
+    aide: horsDelaiAide() ? "à confirmer (démarrage 2027)" : aideUnitaire()*nb(),
+    prenom:S.prenom.trim(), nom:S.nom.trim(), fonction:S.fonction.trim(), tel:S.tel.trim(), email:S.email.trim(),
+    postes:S.postes.join(", "), secteur:S.secteur, nombre:S.nombre, demarrage:m?m.l:"", cp:S.cp, jour:S.jour,
+    criteres:S.criteres.map(function(c){return c==="Une autre langue"&&S.langue?S.langue:c;}).join(", "), qualites:S.qualites.join(", "),
+    precisions:S.precisions.trim(), rdv:S.rdv, source:visite.source, campagne:visite.campagne };
+  var fin=function(){ envoi=false; step=8; try{ localStorage.removeItem("tl_ent_brouillon"); }catch(_){} rendu();
+    try{ if(window.fbq) fbq("track","Lead",{content_name:"Demande entreprise"}); if(window.ttq) ttq.track("SubmitForm",{content_name:"Demande entreprise"}); }catch(_){} };
+  if(!EN_LIGNE){ setTimeout(fin,500); return; }
+  var row={entreprise:d.entreprise,siret:d.siret||null,taille:d.taille||null,aide:d.aide==null?null:String(d.aide),
+    prenom:d.prenom,nom:d.nom,fonction:d.fonction||null,tel:d.tel,email:d.email,postes:d.postes,secteur:d.secteur||null,
+    nombre:d.nombre==null?null:String(d.nombre),demarrage:d.demarrage||null,cp:d.cp,jour:d.jour||null,criteres:d.criteres||null,
+    qualites:d.qualites||null,precisions:d.precisions||null,rdv:d.rdv||null,source:d.source||null,campagne:d.campagne||null};
+  fetch(SB_URL+"/rest/v1/entreprises",{method:"POST",headers:{apikey:SB_KEY,Authorization:"Bearer "+SB_KEY,"Content-Type":"application/json",Prefer:"return=minimal"},body:JSON.stringify(row)})
+    .then(function(r){ if(!r.ok) throw new Error("insert "+r.status); })
+    .then(fin, function(){ envoi=false; rendu(); document.getElementById("err").textContent="L'envoi n'a pas abouti. Vérifiez votre connexion et réessayez, ou appelez-nous au 01 89 62 93 26."; });
+}
+
+/* ---------- Rendu et événements ---------- */
+function rendu(){
+  app.innerHTML = ECRANS[step]();
+  majFiche();
+  var first = app.querySelector("input:not([type=checkbox]):not(#f-hp),textarea");
+  if(first && step>0 && step<7 && !first.value && window.matchMedia("(min-width:900px)").matches) first.focus({preventScroll:true});
+}
+function suivant(){
+  if(step===0){ step=1; rendu(); window.scrollTo({top:0}); return; }
+  var e=valider(); if(e){ var el=document.getElementById("err"); if(el) el.textContent=e; return; }
+  step = step===6 ? 7 : step+1; sauver(); rendu(); window.scrollTo({top:0});
+}
+app.addEventListener("click", function(ev){
+  var b = ev.target.closest("button"); if(!b) return;
+  if(b.id==="next") return suivant();
+  if(b.id==="back"){ step=Math.max(1,step-1); rendu(); return; }
+  if(b.id==="send") return envoi ? null : envoyer();
+  if(b.dataset.go){ step=parseInt(b.dataset.go,10); rendu(); window.scrollTo({top:0}); return; }
+  if(b.dataset.f){
+    var f=b.dataset.f, v=b.dataset.v;
+    if(b.dataset.multi==="1"){
+      var i=S[f].indexOf(v), max=parseInt(b.dataset.max||"0",10);
+      if(i>-1) S[f].splice(i,1);
+      else { if(max && S[f].length>=max){ var er=document.getElementById("err"); if(er) er.textContent="3 qualités au maximum : retirez-en une pour en choisir une autre."; return; } S[f].push(v); }
+    } else S[f] = (S[f]===v && f!=="jour") ? "" : v;
+    sauver(); rendu();
+  }
+});
+app.addEventListener("input", function(ev){
+  var t=ev.target;
+  if(t.id==="f-rgpd"){ S.rgpd=t.checked; return; }
+  if(t.dataset.f){
+    var v=t.value; if(t.dataset.f==="cp"){ v=v.replace(/\D/g,"").slice(0,5); t.value=v; }
+    S[t.dataset.f]=v; majFiche();
+    if(t.dataset.f==="cp" && v.length===5){ sauver(); var pos=t.selectionStart; rendu(); var n=document.getElementById("f-cp"); if(n){ n.focus(); n.setSelectionRange(pos,pos);} }
+  }
+});
+app.addEventListener("change", function(ev){ if(ev.target.id==="f-rgpd") S.rgpd=ev.target.checked; else sauver(); });
+app.addEventListener("keydown", function(ev){
+  if(ev.key==="Enter" && ev.target.tagName!=="TEXTAREA" && ev.target.tagName!=="BUTTON" && step>0 && step<7){ ev.preventDefault(); suivant(); }
+});
+
+rendu();
+})();
+</script>
+</body>
+</html>

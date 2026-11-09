@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/entreprises", "destination": "/entreprise", "permanent": true },
+    { "source": "/admin", "destination": "/connexion", "permanent": false }
+  ]
+}

@@ -389,6 +389,7 @@ footer{background:var(--accent);padding:16px;padding-bottom:calc(16px + env(safe
         <ul>
           <li><a href="#metier">La formation</a></li>
           <li><a href="#calendrier">Job dating</a></li>
+          <li><a href="/entreprise">Entreprises</a></li>
           <li><a href="#parcours">Ton parcours</a></li>
           <li><a href="#directeur">L'école</a></li>
           <li><a href="#postuler">Postuler</a></li>
@@ -597,7 +598,7 @@ footer{background:var(--accent);padding:16px;padding-bottom:calc(16px + env(safe
     <div class="foot-in gut frame">
       <h2>La vente s'apprend.<br><em>Sur le terrain.</em></h2>
       <div class="fcols">
-        <div><h4>L'école</h4><ul><li><a href="#metier">La formation</a></li><li><a href="#parcours">Ton parcours</a></li><li><a href="#directeur">Le mot du directeur</a></li><li><a href="#calendrier">Job dating</a></li></ul></div>
+        <div><h4>L'école</h4><ul><li><a href="#metier">La formation</a></li><li><a href="#parcours">Ton parcours</a></li><li><a href="#directeur">Le mot du directeur</a></li><li><a href="#calendrier">Job dating</a></li><li><a href="/entreprise">Recruter un alternant</a></li></ul></div>
         <div><h4>Postuler</h4><ul><li><a href="#postuler">Candidature en 2 minutes</a></li><li><a href="#calendrier">Prochains job datings</a></li></ul></div>
         <div><h4>Nous trouver</h4><ul><li>6 rue Sadi Carnot</li><li>93170 Bagnolet</li><li>01 89 62 93 26</li><li>direction@talentys.info</li></ul></div>
         <div><h4>Suivre Talentys</h4><ul><li><a href="https://www.instagram.com/cfa.talentys/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/profile.php?id=61595436711773" target="_blank" rel="noopener">Facebook</a></li></ul></div>
@@ -799,7 +800,7 @@ const burger=$("#burger");
 burger.addEventListener("click",()=>{
   const sh=document.createElement("div"); sh.className="sheet"; sh.setAttribute("role","dialog"); sh.setAttribute("aria-modal","true"); sh.setAttribute("aria-label","Menu");
   sh.innerHTML='<div class="sheet-top"><span class="logo"><b style="font:700 1.25rem var(--f-mark)">Talentys</b></span><button class="x" aria-label="Fermer le menu"></button></div><nav aria-label="Menu mobile">'+
-   [["#metier","La formation"],["#parcours","Ton parcours"],["#calendrier","Job dating"],["#directeur","L'école"],["#postuler","Postuler"]].map((l,i)=>'<a href="'+l[0]+'" style="transition-delay:'+(120+i*55)+'ms">'+l[1]+'</a>').join("")+'</nav>';
+   [["#metier","La formation"],["#parcours","Ton parcours"],["#calendrier","Job dating"],["#directeur","L'école"],["/entreprise","Entreprises"],["#postuler","Postuler"]].map((l,i)=>'<a href="'+l[0]+'" style="transition-delay:'+(120+i*55)+'ms">'+l[1]+'</a>').join("")+'</nav>';
   document.body.appendChild(sh); document.documentElement.style.overflow="hidden"; burger.setAttribute("aria-expanded","true");
   requestAnimationFrame(()=>requestAnimationFrame(()=>sh.classList.add("open")));
   const x=sh.querySelector(".x"); x.focus();
