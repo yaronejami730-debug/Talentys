@@ -357,6 +357,55 @@ footer{background:var(--accent);padding:16px;padding-bottom:calc(16px + env(safe
 .modal h5{margin:.3rem 0 0;font-size:.9rem}
 @media(min-width:700px){.modal{align-items:center;padding-bottom:16px}}
 .mt{display:flex;justify-content:space-between;align-items:center}
+
+/* ---------- Programme ---------- */
+#programme{background:var(--ground);color:var(--ink);position:relative;z-index:1}
+.pg{padding-block:5.5rem 5rem;display:grid;gap:4rem}
+.pg-head h2{font-size:var(--t-display);font-weight:800;margin-top:1rem}
+.pg-head h2 em,.pg h3 em{font-style:normal;color:var(--accent-ink)}
+.pg-lead{max-width:46rem;margin-top:1.3rem;font-size:var(--t-lead);color:var(--ink-soft)}
+.pg-nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:2.2rem}
+@media(min-width:760px){.pg-nums{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:1180px){.pg-nums.six{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.pg-nums>div{background:#fff;padding:1.1rem 1.2rem 1.2rem}
+.pg-nums b{display:block;font:700 2.3rem/1 var(--f-display);color:var(--ink)}
+.pg-nums span{display:block;margin-top:.4rem;font-size:.9rem;line-height:1.35;color:var(--ink-soft)}
+.pg-acts{display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem 2rem;margin-top:2.2rem}
+.pg-blk{display:grid;gap:1.4rem}
+.pg-blk>h3{font-size:var(--t-heading)}
+.pg-blocs{display:grid;gap:1rem}
+@media(min-width:860px){.pg-blocs{grid-template-columns:1fr 1fr}}
+.pg-bloc{background:var(--panel);color:var(--on-panel);padding:1.6rem 1.7rem 1.5rem;border-top:4px solid var(--accent)}
+.pg-bloc .k{font-size:var(--t-label);font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}
+.pg-bloc h4{font:700 2rem/1 var(--f-display);text-transform:uppercase;margin:.5rem 0 .8rem}
+.pg-bloc p{color:var(--on-panel-soft)}
+.pg-bloc ul{list-style:none;margin:1rem 0;padding:0}
+.pg-bloc li{position:relative;padding-left:1.2rem;margin:.45rem 0}
+.pg-bloc li::before{content:"";position:absolute;left:0;top:.6em;width:.4rem;height:.4rem;background:var(--accent)}
+.pg-bloc .off{font-size:.88rem;font-style:italic;border-top:1px solid rgba(255,255,255,.12);padding-top:.9rem}
+.pg-note{color:var(--ink-soft);max-width:62ch}
+.pg-acc{max-width:62rem;border-top:1px solid var(--line)}
+.pg-grp{font-size:var(--t-label);font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-ink);padding:1.6rem 0 .6rem;border-bottom:1px solid var(--line)}
+.pg-acc summary>span:first-child{flex:1}
+.pg-acc summary .h{font:700 1.15rem/1.3 var(--f-display);color:var(--ink-soft);white-space:nowrap}
+.pg-acc details ul,.pg-acc details ol{margin:.7rem 0 0;padding-left:1.2rem;color:var(--ink-soft);max-width:70ch}
+.pg-acc details li{margin:.3rem 0}
+.pg-acc details li::marker{color:var(--accent)}
+.pg-acc details p b,.pg-acc details li b{color:var(--ink)}
+.pg-acc .hook{font-style:italic;color:var(--ink)}
+.pg-total{font-weight:700;margin-top:1.2rem}
+.pg-tblw{overflow-x:auto;margin-top:.9rem}
+.pg-tbl{border-collapse:collapse;width:100%;min-width:32rem;background:#fff;font-size:.95rem}
+.pg-tbl th,.pg-tbl td{border:1px solid var(--line);padding:.6rem .8rem;text-align:left;vertical-align:top}
+.pg-tbl th{background:var(--panel);color:#fff;font-weight:600}
+.pg-tbl td:nth-child(2){white-space:nowrap;font-weight:700}
+.pg-info{display:grid;gap:0;max-width:62rem;margin:0;border:1px solid var(--line);background:#fff;font-size:.93rem}
+.pg-info>div{display:grid;grid-template-columns:minmax(8rem,14rem) 1fr;border-top:1px solid var(--line)}
+.pg-info>div:first-child{border-top:0}
+.pg-info dt{font-weight:700;padding:.55rem .9rem;background:#EDF1F6}
+.pg-info dd{margin:0;padding:.55rem .9rem}
+@media(max-width:560px){.pg-info>div{grid-template-columns:1fr}}
+.pg-legal{font-size:.8rem;color:var(--ink-soft);max-width:62rem}
 </style>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}</style>
 </head>
@@ -388,6 +437,7 @@ footer{background:var(--accent);padding:16px;padding-bottom:calc(16px + env(safe
       <nav class="nav" aria-label="Principal">
         <ul>
           <li><a href="#metier">La formation</a></li>
+          <li><a href="#programme">Programme</a></li>
           <li><a href="#calendrier">Job dating</a></li>
           <li><a href="/entreprise">Entreprises</a></li>
           <li><a href="#parcours">Ton parcours</a></li>
@@ -452,6 +502,7 @@ footer{background:var(--accent);padding:16px;padding-bottom:calc(16px + env(safe
         <span>Tu vends</span><b aria-hidden="true">→</b><span>Le CA monte</span><b aria-hidden="true">→</b><span class="hot">Tu gagnes</span>
       </div>
       <p>Chez Talentys, tu apprends la méthode des pros : trouver des clients, comprendre leur besoin, construire une offre et signer.</p>
+      <p style="margin-top:1.2rem"><a class="lnk" href="#programme" style="color:var(--accent)"><b class="brk">Voir le programme</b></a></p>
     </div>
     <div class="track-wrap">
       <div class="cap label"><span>Le cycle de vente</span><span id="lapState">7 étapes</span></div>
@@ -473,6 +524,91 @@ footer{background:var(--accent);padding:16px;padding-bottom:calc(16px + env(safe
       <div class="row"><span class="v">9</span><span class="k">Compétences, 2 blocs, 1 titre RNCP39063</span></div>
       <div class="row"><span class="v">84 %</span><span class="k">D'insertion à 6 mois*</span></div>
       <small>* Chiffre national du titre (certifiés 2022), source France Compétences. Ce n'est pas un résultat propre à Talentys.</small>
+    </div>
+  </div>
+  <div class="shade"></div>
+</section>
+
+<!-- ===================== PROGRAMME ===================== -->
+<section id="programme" class="layer" aria-labelledby="h-prog">
+  <div class="pg gut frame">
+    <div class="pg-head">
+      <p class="eyebrow">Le programme · Titre professionnel Négociateur technico-commercial</p>
+      <h2 id="h-prog">Ce que tu vas<br><em>vraiment apprendre.</em></h2>
+      <p class="pg-lead">Pendant 14 mois, tu alternes entre l'entreprise, où tu vends pour de vrai, et le CFA, où tu apprends à mieux vendre. 480 heures de cours, 100 % pratique : jeux de rôle filmés, phoning, négociations face à des pros, et une étude de cas fil rouge qui te prépare directement à l'examen.</p>
+      <div class="pg-nums six">
+        <div><b>480 h</b><span>de cours au CFA (60 jours de 8 h)</span></div>
+        <div><b>14 mois</b><span>en contrat d'apprentissage</span></div>
+        <div><b>Niveau 5</b><span>équivalent Bac+2, titre reconnu par l'État</span></div>
+        <div><b>2 blocs</b><span>de compétences, 9 compétences au total</span></div>
+        <div><b>0 €</b><span>de frais pour toi, c'est l'OPCO de l'entreprise qui finance</span></div>
+        <div><b>6 à 15</b><span>apprenants par promo, pour être suivi de près</span></div>
+      </div>
+      <div class="pg-acts">
+        <a class="cta" href="/formation"><svg class="f" viewBox="0 0 220 50" preserveAspectRatio="none" aria-hidden="true"><path class="body" d="M220 42L212.9 50H0V0H220Z"/><path class="flood" d="M220 42L212.9 50H0V0H220Z"/><path class="ring" d="M220 42L212.9 50H0V0H220Z"/><path class="br" d="M205 49.5H213L219.5 42V36M212 .5H219.5V7M8 .5H.5V7M7.5 49.5H.5V42.5"/></svg>Voir le programme complet <svg class="arw" viewBox="0 0 13.7 10.7" aria-hidden="true"><path d="M0 5.35H13M8 10.35L13 5.35L8 .35"/></svg></a>
+        <a class="lnk" href="#postuler"><b class="brk">Postuler</b></a>
+      </div>
+    </div>
+
+    <div class="pg-blk">
+      <h3>Deux blocs, <em>un métier.</em></h3>
+      <div class="pg-blocs">
+        <div class="pg-bloc">
+          <p class="k">Bloc 1 · 208 h</p><h4>Prospecter</h4>
+          <p>Tu apprends à trouver des clients avant les autres, à décrocher des rendez-vous et à piloter ton secteur avec des chiffres.</p>
+          <ul><li>Assurer une veille commerciale</li><li>Concevoir et organiser un plan d'actions commerciales</li><li>Prospecter un secteur défini</li><li>Analyser tes performances et corriger le tir</li></ul>
+          <p class="off">Intitulé officiel : Élaborer une stratégie de prospection et la mettre en œuvre (RNCP39063BC01).</p>
+        </div>
+        <div class="pg-bloc">
+          <p class="k">Bloc 2 · 216 h</p><h4>Négocier et fidéliser</h4>
+          <p>Tu apprends à construire une offre sur mesure, à la négocier face à un acheteur pro, puis à garder le client.</p>
+          <ul><li>Représenter l'entreprise et valoriser son image</li><li>Concevoir une proposition technique et commerciale</li><li>Négocier une solution technique et commerciale</li><li>Réaliser le bilan, ajuster ton activité et rendre compte</li><li>Optimiser la relation client</li></ul>
+          <p class="off">Intitulé officiel : Négocier une solution technique et commerciale et consolider l'expérience client (RNCP39063BC02).</p>
+        </div>
+      </div>
+      <p class="pg-note">Chaque bloc est un certificat de compétences professionnelles (CCP) capitalisable. Si tu n'as pas tout validé du premier coup, tu gardes ce que tu as réussi.</p>
+    </div>
+
+    <div class="pg-blk">
+      <h3>Module <em>par module.</em></h3>
+      <div class="pg-acc">
+<p class="pg-grp">Au départ</p>
+<details><summary><span>Accueil et positionnement</span><span class="h">8 h</span></summary><p><span class="hook">Tu démarres du bon pied.</span> Tu découvres le parcours, le règlement et les épreuves, puis tu passes des tests (expression écrite, calcul commercial, bureautique, anglais) pour construire un parcours à ta mesure. Tu prends aussi en main la plateforme, la bureautique et le CRM.</p></details>
+<p class="pg-grp">Bloc 1 · Prospecter · 208 h</p>
+<details><summary><span>Module 1 · Assurer une veille commerciale</span><span class="h">40 h</span></summary><p class="hook">Tu repères les opportunités avant tout le monde.</p><ul><li>Mettre en place une veille concurrentielle, technologique, réglementaire et sociétale</li><li>Trier et vérifier tes sources, y compris celles de l'IA générative</li><li>Utiliser PESTEL, les 5 forces de Porter et la matrice SWOT</li><li>Comprendre comment une entreprise décide d'acheter (centre de décision, appels d'offres)</li><li>Collecter des infos dans le respect du RGPD</li></ul><p><b>Tu produis :</b> une note de veille et une matrice SWOT commentée.</p></details>
+<details><summary><span>Module 2 · Concevoir un plan d'actions commerciales</span><span class="h">64 h</span></summary><p class="hook">Tu transformes des objectifs en plan d'attaque.</p><ul><li>Segmenter ton marché et construire tes personas</li><li>Fixer des objectifs SMART (chiffre d'affaires, marge, rendez-vous, transformation)</li><li>Bâtir un plan d'actions omnicanal chiffré et planifié</li><li>Maîtriser les maths commerciales : marge, taux de marque, coefficient, seuil de rentabilité</li><li>Organiser tes tournées, ton agenda et ton fichier clients dans un CRM</li></ul><p><b>Tu produis :</b> un plan d'actions commerciales (document et diaporama), présenté à l'oral.</p></details>
+<details><summary><span>Module 3 · Prospecter un secteur défini</span><span class="h">64 h</span></summary><p class="hook">Tu décroches des rendez-vous, même avec les plus difficiles à joindre.</p><ul><li>Phoning : guide d'appel, passage des barrages, traitement des objections</li><li>E-mailing et séquences de prospection</li><li>Social selling et e-réputation</li><li>Prospection terrain, salons, réseau de prescripteurs</li><li>Qualification des contacts et suivi du pipeline</li></ul><p><b>Comment on s'entraîne :</b> plateau de phoning, jeux de rôle filmés et débriefés un par un.</p><p><b>Tu es évalué sur :</b> 15 minutes de prospection téléphonique, au format de l'examen.</p></details>
+<details><summary><span>Module 4 · Analyser ses performances et corriger</span><span class="h">40 h</span></summary><p class="hook">Tu pilotes ton activité avec les chiffres.</p><ul><li>Construire un tableau de bord commercial</li><li>Calculer et lire les KPI : chiffre d'affaires, marge, panier moyen, taux de transformation, fidélisation, coût d'acquisition</li><li>Maîtriser le tableur (formules, tableaux croisés dynamiques, graphiques)</li><li>Analyser les écarts et proposer des actions correctives</li><li>Présenter le tout à ta hiérarchie en 10 à 12 diapositives</li></ul><p><b>Comment on s'entraîne :</b> études de cas chiffrées et soutenances blanches devant un jury de formateurs.</p><p><b>Tu es évalué sur :</b> une étude de cas écrite de 1 h 30, suivie d'une présentation orale.</p></details>
+<p class="pg-grp">Bloc 2 · Négocier et fidéliser · 216 h</p>
+<details><summary><span>Module 5 · Représenter l'entreprise</span><span class="h">32 h</span></summary><p class="hook">Tu incarnes la marque face au client.</p><ul><li>Posture, codes professionnels et savoir-être commercial</li><li>Cadre juridique de la vente B2B : contrat, CGV, délais de paiement, pratiques déloyales</li><li>Tenir un discours responsable sur la transition écologique, sans greenwashing</li><li>Développer et animer ton réseau</li><li>Travailler avec l'administration des ventes, le technique, la logistique et le SAV</li></ul><p><b>Tu es évalué sur :</b> un questionnaire juridique et une mise en situation de représentation.</p></details>
+<details><summary><span>Module 6 · Concevoir une proposition technique et commerciale</span><span class="h">56 h</span></summary><p class="hook">Tu construis l'offre qui fait mouche.</p><ul><li>Découvrir le besoin en profondeur : cahier des charges, motivations d'achat (méthode SONCAS)</li><li>Lire et exploiter des fiches techniques</li><li>Chiffrer : prix de revient, marge, remises, coût global de possession</li><li>Intégrer l'éco-conception et le cycle de vie du produit</li><li>Rédiger une proposition et un devis personnalisés</li><li>Construire ton argumentaire (méthode CAP) et anticiper les objections</li></ul><p><b>Tu es évalué sur :</b> une proposition technique et commerciale rédigée en 3 heures, au format de l'examen.</p></details>
+<details><summary><span>Module 7 · Négocier une solution technique et commerciale</span><span class="h">64 h</span></summary><p class="hook">Le cœur du métier. C'est là que tu gagnes ta place.</p><ul><li>Conduire un entretien de vente, en face à face ou en visio</li><li>Défendre ton prix et tes conditions en préservant la marge</li><li>Techniques de négociation : zone d'accord, solution de repli, concessions et contreparties</li><li>Négocier face à un acheteur pro et à plusieurs décideurs</li><li>Repérer les signaux d'achat et conclure</li><li>Gérer ton stress et ton non-verbal</li></ul><p><b>Comment on s'entraîne :</b> jeux de rôle filmés de 60 minutes avec des professionnels du métier, débriefing individuel.</p><p><b>Tu es évalué sur :</b> une négociation de 60 minutes suivie de 15 minutes d'échange avec le jury, au format de l'examen.</p></details>
+<details><summary><span>Module 8 · Faire le bilan et rendre compte</span><span class="h">24 h</span></summary><p class="hook">Tu analyses, tu ajustes, tu rends des comptes.</p><ul><li>Analyser tes négociations : affaires gagnées, affaires perdues</li><li>Rédiger comptes rendus de visite et rapports d'activité</li><li>Suivre la mise en œuvre chez le client (livraison, installation, mise en service)</li><li>Mettre à jour tes personas grâce au terrain</li></ul><p>On travaille sur des cas réels issus de ton entreprise.</p><p><b>Tu es évalué sur :</b> un compte rendu d'activité et sa présentation orale.</p></details>
+<details><summary><span>Module 9 · Optimiser la relation client</span><span class="h">40 h</span></summary><p class="hook">Tu fidélises, tu développes le compte.</p><ul><li>Parcours client et plan de compte pour les clients stratégiques</li><li>Mesurer la satisfaction : NPS, CSAT, enquêtes</li><li>Traiter les réclamations et les situations tendues</li><li>Vendre plus : ventes additionnelles, ventes croisées, montée en gamme</li><li>Exploiter le CRM pour personnaliser la relation</li></ul><p><b>Tu produis :</b> un dossier relation client, présenté en soutenance.</p></details>
+<p class="pg-grp">En transversal · 48 h</p>
+<details><summary><span>Anglais professionnel commercial</span><span class="h">16 h</span></summary><p>Téléphone, e-mails, présentation d'une offre, échanges simples de négociation. Niveau visé : B2 selon le contexte de ton entreprise.</p></details>
+<details><summary><span>Préparation à la certification</span><span class="h">32 h</span></summary><p>Tu finalises ton Dossier Professionnel et tes productions, puis tu passes un examen blanc complet (4 h d'écrit, 2 h 30 d'oral) devant un jury de formateurs et de professionnels.</p></details>
+      </div>
+      <p class="pg-total">Total : 8 h + 208 h + 216 h + 48 h = 480 heures.</p>
+    </div>
+
+    <div class="pg-blk">
+      <h3>Tout <em>savoir.</em></h3>
+      <div class="pg-acc">
+<details><summary><span>L'examen <span class="muted" style="font-weight:500">· Le jour J, tu sais exactement ce qui t'attend.</span></span></summary><p>La session de validation a lieu au CFA TALENTYS, agréé par la DREETS pour ce titre. Le jury est composé de professionnels du métier. Tu es jugé sur les épreuves, ton Dossier Professionnel et tes évaluations en cours de formation.</p><div class="pg-tblw"><table class="pg-tbl"><thead><tr><th>Épreuve</th><th>Durée</th><th>Ce que tu fais</th></tr></thead><tbody><tr><td>Mise en situation écrite</td><td>4 h</td><td>Étude de cas sur une entreprise fictive : tableau de bord, analyse, diaporama de 10 à 12 diapositives et proposition technique et commerciale</td></tr><tr><td>Mise en situation orale</td><td>2 h 30</td><td>Présentation de ton analyse, 15 min de prospection téléphonique, 60 min de négociation, puis échanges avec le jury</td></tr><tr><td>Entretien technique</td><td>50 min</td><td>À partir d'une matrice SWOT fournie par le jury</td></tr><tr><td>Questionnement sur productions</td><td>1 h</td><td>Tu présentes tes dossiers de veille, de plan d'actions et de relation client</td></tr><tr><td>Entretien final</td><td>10 min</td><td>Échange avec le jury, notamment sur ton Dossier Professionnel</td></tr></tbody></table></div><p><b>Durée totale : 8 h 30.</b></p><p><b>Et si tu ne valides pas tout ?</b> Tu obtiens le ou les CCP réussis. Ils sont capitalisables, tu peux donc revenir passer le reste plus tard.</p></details>
+<details><summary><span>Ton rythme et ton entreprise <span class="muted" style="font-weight:500">· 1 jour au CFA, le reste en entreprise.</span></span></summary><ul><li><b>Au CFA :</b> 1 jour par semaine (60 jours sur l'année), de 9 h à 13 h et de 14 h à 18 h. Deux semaines comptent 2 jours pour compenser la fermeture de fin d'année.</li><li><b>En entreprise :</b> le reste du temps, pendant 14 mois, encadré par un maître d'apprentissage.</li><li><b>Suivi :</b> livret d'apprentissage, entretien à trois (toi, l'entreprise, le CFA) au moins une fois par semestre, visite en entreprise au moins une fois par an.</li><li><b>Lieu :</b> CFA TALENTYS, 4 rue Gambetta, 60100 Creil. Cours en présentiel, en groupe.</li></ul><p>Tu ramènes de l'entreprise de vraies situations de vente. Elles nourrissent ton Dossier Professionnel et tes productions d'examen.</p></details>
+<details><summary><span>Pour qui, et comment entrer <span class="muted" style="font-weight:500">· Pas besoin d'être un pro pour commencer.</span></span></summary><p><b>Pour qui :</b> jeunes et adultes en reconversion ou en évolution, demandeurs d'emploi, personnes en situation de handicap. Aucun diplôme n'est exigé par le titre. Pour bien démarrer, on recommande un niveau Bac ou une première expérience en relation client ou en vente, un bon niveau de français, l'aisance avec l'ordinateur, la curiosité pour les produits techniques et le permis B (tu vas te déplacer).</p><p><b>Comment ça se passe (4 étapes) :</b></p><ol><li>Tu envoies ton dossier de candidature.</li><li>Tu passes un test de positionnement : expression écrite, calcul commercial, bureautique, anglais.</li><li>Tu rencontres le responsable pédagogique pour un entretien de motivation.</li><li>Tu reçois une réponse écrite sous 7 jours ouvrés.</li></ol><p><b>Délais :</b> l'inscription doit être finalisée au plus tard 15 jours avant le démarrage, sous réserve de places disponibles et de l'accord de financement.</p><p><a class="lnk" href="#postuler" style="color:var(--accent-ink)"><b class="brk">Postuler</b></a></p></details>
+<details><summary><span>Financement <span class="muted" style="font-weight:500">· Ça ne te coûte rien.</span></span></summary><p>En contrat d'apprentissage, la formation est gratuite pour toi. Elle est financée par l'OPCO de l'entreprise qui t'accueille, selon le niveau de prise en charge de sa branche. Le coût de la formation est de 10 900 € net de taxe par année de contrat, réglé par l'OPCO et non par toi.</p><p><i>Autres voies d'accès, à étudier au cas par cas : contrat de professionnalisation, formation continue (CPF, France Travail, Transitions Pro), VAE.</i></p></details>
+<details><summary><span>Après la formation <span class="muted" style="font-weight:500">· Un titre, plein de portes.</span></span></summary><p><b>Tu valides :</b> le Titre Professionnel Négociateur technico-commercial, niveau 5, délivré par le ministère du Travail. Enregistré au RNCP (RNCP39063), valable du 10 juin 2024 au 9 juin 2029.</p><p><b>Les métiers :</b> technico-commercial, commercial B2B, chargé de clientèle B2B, chargé d'affaires, chargé de développement commercial, business developer, key account manager, responsable grands comptes, sales account executive, responsable d'affaires.</p><p><b>Les secteurs :</b> industrie, BTP, énergie, informatique et télécoms, services aux entreprises, distribution professionnelle, et tous ceux qui vendent des produits ou services techniques.</p><p><b>Et ensuite :</b> responsable de secteur, responsable grands comptes, responsable commercial, ou poursuite d'études vers un niveau 6 en développement commercial ou management d'équipes de vente.</p></details>
+<details><summary><span>Accessibilité <span class="muted" style="font-weight:500">· Une formation ouverte à tous.</span></span></summary><p>Si tu es en situation de handicap, dis-le dès ta candidature : on étudie ensemble les adaptations dont tu as besoin (supports, rythmes, modalités pédagogiques, aménagement des épreuves de certification). Nos locaux sont accessibles aux personnes à mobilité réduite. On mobilise si besoin Agefiph, Cap emploi et Ressource Handicap Formation.</p><p><b>Référent handicap :</b> Nebia KIRANE · direction@talentys.info · 01 89 62 93 26</p></details>
+<details><summary><span>Résultats <span class="muted" style="font-weight:500">· Nos chiffres, en toute transparence.</span></span></summary><p><b>Nos indicateurs :</b> TALENTYS ouvre cette formation. Taux de réussite, de satisfaction, d'abandon et d'insertion seront publiés ici à l'issue de la première session.</p><p><b>Pour repère, au niveau national</b> (source : fiche RNCP39063, France compétences, promotion 2022) :</p><div class="pg-nums" style="margin-top:.9rem;max-width:44rem"><div><b>1 394</b><span>certifiés</span></div><div><b>84 %</b><span>en emploi 6 mois après</span></div><div><b>75 %</b><span>en emploi dans le métier visé à 6 mois</span></div><div><b>80 %</b><span>en emploi dans le métier visé à 2 ans</span></div></div><p><i>Ces chiffres sont nationaux, pas ceux de TALENTYS.</i></p></details>
+      </div>
+    </div>
+
+    <div class="pg-blk">
+      <p class="eyebrow">Infos pratiques</p>
+      <dl class="pg-info"><div><dt>Intitulé</dt><dd>Titre Professionnel Négociateur technico-commercial</dd></div><div><dt>Niveau</dt><dd>5 (équivalent Bac+2)</dd></div><div><dt>Code RNCP</dt><dd>RNCP39063</dd></div><div><dt>Certificateur</dt><dd>Ministère du Travail, du Plein emploi et de l'Insertion</dd></div><div><dt>Blocs</dt><dd>RNCP39063BC01 et RNCP39063BC02</dd></div><div><dt>Durée</dt><dd>480 h en centre, 14 mois en apprentissage</dd></div><div><dt>Effectif</dt><dd>6 à 15 apprenants par session</dd></div><div><dt>Tarif</dt><dd>10 900 € net de taxe par année de contrat, 0 € pour l'apprenti</dd></div><div><dt>Responsable pédagogique</dt><dd>David JAMI</dd></div><div><dt>Lieu</dt><dd>4 rue Gambetta, 60100 Creil</dd></div><div><dt>Contact</dt><dd>01 89 62 93 26 · direction@talentys.info</dd></div></dl>
+      <p class="pg-legal">CFA TALENTYS · SIRET 980 416 549 00023 · NDA 32600461360 (cet enregistrement ne vaut pas agrément de l'État) · UAI 0602251W. Programme version 4 du 10/09/2026.</p>
     </div>
   </div>
   <div class="shade"></div>
@@ -583,7 +719,9 @@ footer{background:var(--accent);padding:16px;padding-bottom:calc(16px + env(safe
       <details><summary>Je n'ai pas encore d'entreprise, je fais comment ?</summary><p>Viens au job dating un vendredi. Tu y rencontres des entreprises partenaires qui recrutent, et notre équipe continue de t'accompagner jusqu'à la signature.</p></details>
       <details><summary>Faut-il avoir le Bac ?</summary><p>Non. La formation est accessible sans le Bac. Ce qui compte, c'est ta motivation.</p></details>
       <details><summary>Combien de temps dure la formation ?</summary><p>14 mois en contrat d'apprentissage, avec 4 jours en entreprise et 1 jour à l'école chaque semaine. Prochaine rentrée : novembre 2026.</p></details>
-      <details><summary>Je suis en situation de handicap, je peux postuler ?</summary><p>Oui, la formation est accessible aux personnes en situation de handicap. Parle-nous de tes besoins lors de notre premier appel : on adapte ton accueil et ta formation.</p></details>
+      <details><summary>Je suis en situation de handicap, je peux postuler ?</summary><p>Oui, la formation est accessible aux personnes en situation de handicap. Parles-en dès ta candidature à notre référent handicap, Nebia KIRANE : on adapte ton accueil et ta formation.</p></details>
+      <details><summary>Que se passe-t-il si je rate une partie de l'examen ?</summary><p>Tu gardes les certificats de compétences (CCP) que tu as validés et tu peux repasser le reste plus tard.</p></details>
+      <details><summary>Le permis est-il obligatoire ?</summary><p>Il est recommandé : le métier implique des déplacements fréquents.</p></details>
       <details><summary>Je dois m'inscrire pour venir au job dating ?</summary><p>Oui, l'inscription est obligatoire. Envoie ta candidature en 2 minutes, on t'appelle sous 24 h pour réserver ta place.</p></details>
       <details><summary>J'ai moins de 18 ans, c'est possible ?</summary><p>Oui, dès 16 ans. Un de tes parents doit être d'accord pour ta candidature et signer le contrat avec toi.</p></details>
       <details><summary>Quel diplôme j'obtiens ?</summary><p>Le titre professionnel Négociateur technico-commercial (RNCP39063), niveau 5, équivalent Bac+2, délivré par le ministère du Travail. Il ouvre aux postes de technico-commercial, chargé d'affaires, commercial B2B ou business developer.</p></details>
@@ -598,9 +736,9 @@ footer{background:var(--accent);padding:16px;padding-bottom:calc(16px + env(safe
     <div class="foot-in gut frame">
       <h2>La vente s'apprend.<br><em>Sur le terrain.</em></h2>
       <div class="fcols">
-        <div><h4>L'école</h4><ul><li><a href="#metier">La formation</a></li><li><a href="#parcours">Ton parcours</a></li><li><a href="#directeur">Le mot du directeur</a></li><li><a href="#calendrier">Job dating</a></li><li><a href="/entreprise">Recruter un alternant</a></li></ul></div>
+        <div><h4>L'école</h4><ul><li><a href="#metier">La formation</a></li><li><a href="#programme">Le programme</a></li><li><a href="/formation">Programme complet</a></li><li><a href="#parcours">Ton parcours</a></li><li><a href="#directeur">Le mot du directeur</a></li><li><a href="#calendrier">Job dating</a></li><li><a href="/entreprise">Recruter un alternant</a></li></ul></div>
         <div><h4>Postuler</h4><ul><li><a href="#postuler">Candidature en 2 minutes</a></li><li><a href="#calendrier">Prochains job datings</a></li></ul></div>
-        <div><h4>Nous trouver</h4><ul><li>6 rue Sadi Carnot</li><li>93170 Bagnolet</li><li>01 89 62 93 26</li><li>direction@talentys.info</li></ul></div>
+        <div><h4>Nous trouver</h4><ul><li>01 89 62 93 26</li><li>direction@talentys.info</li></ul></div>
         <div><h4>Suivre Talentys</h4><ul><li><a href="https://www.instagram.com/cfa.talentys/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/profile.php?id=61595436711773" target="_blank" rel="noopener">Facebook</a></li></ul></div>
       </div>
       <div class="legal">
@@ -634,7 +772,6 @@ footer{background:var(--accent);padding:16px;padding-bottom:calc(16px + env(safe
     <tr><th>Téléphone</th><td>01 89 62 93 26</td></tr>
     <tr><th>Courrier électronique</th><td>direction@talentys.info</td></tr>
   </table></div>
-  <p>Lieu de formation et d'accueil du public : 6 rue Sadi Carnot, 93170 Bagnolet.</p>
 
   <h4>2. Directeur de la publication</h4>
   <p>Le directeur de la publication est M. David Jami, Président et représentant légal de TALENTYS, au sens de l'article 1-1 de la LCEN et de l'article 93-2 de la loi n° 82-652 du 29 juillet 1982 sur la communication audiovisuelle. Contact : direction@talentys.info.</p>
@@ -646,7 +783,7 @@ footer{background:var(--accent);padding:16px;padding-bottom:calc(16px + env(safe
     <li><strong>Certification qualité</strong> : TALENTYS est titulaire de la certification qualité Qualiopi prévue à l'article L. 6316-1 du Code du travail, au titre des catégories « actions de formation » (article L. 6313-1, 1°) et « actions de formation par apprentissage » (article L. 6313-1, 4°). Certificat n° QUA006747, délivré par l'ICPF (organisme certificateur accrédité par le COFRAC sous le n° 5-0616), valable du 28 octobre 2025 au 4 février 2027 ; première émission le 5 février 2024. Le certificat, émis sous l'ancienne dénomination sociale MANABU et l'enseigne « Poly Langues », peut être vérifié sur <a href="https://www.certif-icpf.org" target="_blank" rel="noopener">certif-icpf.org</a>.</li>
     <li><strong>Certification préparée</strong> : titre professionnel « Négociateur technico-commercial » de niveau 5, enregistré au Répertoire national des certifications professionnelles sous le n° RNCP39063. Le certificateur est le ministère chargé de l'emploi. Le titre est délivré par ce ministère après réussite à la session d'examen ; TALENTYS prépare les candidats à cette certification sans la délivrer elle-même (<a href="https://www.francecompetences.fr/recherche/rncp/39063/" target="_blank" rel="noopener">fiche France Compétences</a>).</li>
     <li><strong>Indicateurs de résultats</strong> : conformément à l'article L. 6111-8 du Code du travail, TALENTYS publie chaque année, dès que ses effectifs sont suffisants, les taux d'obtention du titre, de poursuite d'études, d'interruption en cours de formation, d'insertion professionnelle, de rupture des contrats d'apprentissage et sa valeur ajoutée. La première promotion d'apprentis de TALENTYS est en cours de formation : aucun taux ne peut encore être calculé. Ces indicateurs seront publiés sur le Site dès qu'ils seront disponibles. Le taux d'insertion de 84 % affiché sur le Site est un taux national, publié par France Compétences, et ne constitue pas un résultat propre à TALENTYS.</li>
-    <li><strong>Accessibilité aux personnes en situation de handicap</strong> : la formation est accessible aux personnes en situation de handicap. Le référent handicap est M. David Jami, joignable au 01 89 62 93 26 ou à direction@talentys.info, pour étudier avec chaque candidat les adaptations nécessaires à son accueil et à sa formation.</li>
+    <li><strong>Accessibilité aux personnes en situation de handicap</strong> : la formation est accessible aux personnes en situation de handicap. Référent handicap : Nebia KIRANE, joignable au 01 89 62 93 26 ou à direction@talentys.info, pour étudier avec chaque candidat les adaptations nécessaires à son accueil et à sa formation.</li>
   </ul>
 
   <h4>4. Hébergement</h4>
@@ -799,7 +936,7 @@ const burger=$("#burger");
 burger.addEventListener("click",()=>{
   const sh=document.createElement("div"); sh.className="sheet"; sh.setAttribute("role","dialog"); sh.setAttribute("aria-modal","true"); sh.setAttribute("aria-label","Menu");
   sh.innerHTML='<div class="sheet-top"><span class="logo"><b style="font:700 1.25rem var(--f-mark)">Talentys</b></span><button class="x" aria-label="Fermer le menu"></button></div><nav aria-label="Menu mobile">'+
-   [["#metier","La formation"],["#parcours","Ton parcours"],["#calendrier","Job dating"],["#directeur","L'école"],["/entreprise","Entreprises"],["#postuler","Postuler"]].map((l,i)=>'<a href="'+l[0]+'" style="transition-delay:'+(120+i*55)+'ms">'+l[1]+'</a>').join("")+'</nav>';
+   [["#metier","La formation"],["#programme","Programme"],["#parcours","Ton parcours"],["#calendrier","Job dating"],["#directeur","L'école"],["/entreprise","Entreprises"],["#postuler","Postuler"]].map((l,i)=>'<a href="'+l[0]+'" style="transition-delay:'+(120+i*55)+'ms">'+l[1]+'</a>').join("")+'</nav>';
   document.body.appendChild(sh); document.documentElement.style.overflow="hidden"; burger.setAttribute("aria-expanded","true");
   requestAnimationFrame(()=>requestAnimationFrame(()=>sh.classList.add("open")));
   const x=sh.querySelector(".x"); x.focus();
@@ -824,6 +961,7 @@ function stack(){
 if(!RM){addEventListener("scroll",()=>requestAnimationFrame(stack),{passive:true});}
 addEventListener("resize",()=>{sizeLayers();stack();});
 sizeLayers(); setTimeout(sizeLayers,500);
+document.addEventListener("toggle",()=>{sizeLayers();stack();},true);
 
 /* ---------- Lignes de niveau (marching squares) ---------- */
 function hash(x,y){const s=Math.sin(x*127.1+y*311.7)*43758.5453;return s-Math.floor(s);}
