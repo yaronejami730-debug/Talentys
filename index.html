@@ -94,13 +94,13 @@ p{margin:0}
 .logo b{font:700 1.25rem/1 var(--f-mark);letter-spacing:-.01em;color:var(--ink)}
 .logo small{display:block;font:600 .62rem/1 var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-top:.25rem}
 .nav{position:absolute;left:50%;transform:translateX(-50%);display:none}
-.nav ul{display:flex;gap:2.6rem;list-style:none;margin:0;padding:0}
-.nav a{font-size:var(--t-label);text-transform:uppercase;letter-spacing:.08em;font-weight:600;text-decoration:none;transition:color .15s var(--ease)}
+.nav ul{display:flex;gap:clamp(1.1rem,1.9vw,2.4rem);list-style:none;margin:0;padding:0}
+.nav a{font-size:var(--t-label);text-transform:uppercase;letter-spacing:.08em;font-weight:600;text-decoration:none;transition:color .15s var(--ease);white-space:nowrap}
 .nav a:hover{color:var(--accent-ink)}
 .mast-right{display:none}
 .burger{background:none;border:0;padding:.6rem;margin-right:-.6rem;cursor:pointer;display:grid;gap:.32rem}
 .burger span{display:block;width:1.5rem;height:1.5px;background:var(--ink)}
-@media(min-width:1180px){.nav,.mast-right{display:block}.burger{display:none}}
+@media(min-width:1240px){.nav,.mast-right{display:block}.burger{display:none}}
 .sheet{position:fixed;inset:0;z-index:70;background:var(--ground);display:flex;flex-direction:column;padding:calc(1.2rem + env(safe-area-inset-top,0px)) max(24px,env(safe-area-inset-right,0px)) calc(1.5rem + env(safe-area-inset-bottom,0px)) max(24px,env(safe-area-inset-left,0px));opacity:0;transition:opacity .25s var(--ease)}
 .sheet.open{opacity:1}
 .sheet-top{display:flex;justify-content:space-between;align-items:center}
